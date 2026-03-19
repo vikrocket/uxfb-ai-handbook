@@ -312,7 +312,7 @@
 
 <!-- METHODOLOGY -->
 <div class="content-section active" id="methodology">
-<div class="page" style="margin: 0;">
+<div class="page" style="margin: 0; width: 100%;">
 
   <div class="header" style="margin-bottom: 40px;">
     <div class="header-eyebrow">UX Feedback · Принцип обработки фидбека</div>
@@ -823,7 +823,7 @@
 
 <!-- ASSISTANT -->
 <div class="content-section" id="assistant">
-<div class="page" style="margin: 0;">
+<div class="page" style="margin: 0; width: 100%;">
 
   <div class="header" style="margin-bottom: 40px;">
     <div class="header-eyebrow">AI Ассистент · Сценарии</div>
@@ -1013,7 +1013,7 @@
 
 <!-- ENGINEERING -->
 <div class="content-section" id="engineering">
-<div class="page" style="margin: 0;">
+<div class="page" style="margin: 0; width: 100%;">
 
   <div class="header" style="margin-bottom: 40px;">
     <div class="header-eyebrow">Для инженеров · Техническая документация</div>
@@ -1037,19 +1037,38 @@
 </div><!-- end main -->
 
 <script>
-function showSection(id) {
+function showSection(id, pushState) {
   document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
+  const section = document.getElementById(id);
+  if (section) section.classList.add('active');
+  const navItem = document.querySelector(`[data-section="${id}"]`);
+  if (navItem) navItem.classList.add('active');
+  if (pushState !== false) {
+    history.pushState({ section: id }, '', '#' + id);
+  }
+  window.scrollTo(0, 0);
 }
 
-function scrollTo(id) {
+function scrollToEl(id) {
   setTimeout(() => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 50);
 }
+
+// Handle back/forward
+window.addEventListener('popstate', (e) => {
+  const id = e.state?.section || location.hash.replace('#', '') || 'methodology';
+  showSection(id, false);
+});
+
+// Load from URL hash on init
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = location.hash.replace('#', '');
+  const valid = ['methodology', 'assistant', 'engineering'];
+  showSection(valid.includes(hash) ? hash : 'methodology', false);
+});
 </script>
 
 </body>
