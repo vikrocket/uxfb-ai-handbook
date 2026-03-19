@@ -141,7 +141,7 @@
   .main { overflow-x: hidden; min-width: 0; }
 
   /* EDITORIAL HEADER */
-  .header { margin-bottom: 48px; }
+  .header { margin-bottom: 40px; }
   .header-eyebrow {
     font-size: 11px; font-weight: 600; color: var(--accent);
     letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;
@@ -317,9 +317,9 @@
 <div class="content-section active" id="methodology">
 <div class="page" style="margin: 0; width: 100%;">
 
-  <div class="header" style="margin-bottom: 40px;">
+  <div class="header">
     <div class="header-eyebrow">UX Feedback · Принцип обработки фидбека</div>
-    <h1 style="font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; letter-spacing: -0.03em; color: var(--text); letter-spacing: -0.02em; line-height: 1.15; margin-top: 8px;">Методология<br><span style="color: var(--accent);">атомарных сигналов</span></h1>
+    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em;">Методология<br><span style="color: var(--accent);">атомарных сигналов</span></h1>
   </div>
 
   <!-- INTRO -->
@@ -585,10 +585,10 @@
     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 24px;">
 
       <div class="signal-card">
-        <div style="padding: 14px 18px; border-bottom: 1px solid var(--border);">
+        <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
           <div class="attr-label">Правила сигнала</div>
         </div>
-        <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
           <div style="font-size: 13px; color: var(--text); line-height: 1.5;">Формула: <strong>глагол + объект</strong></div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Одна мысль = один сигнал</div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Без объекта сигнал не формируется — даже позитивный</div>
@@ -597,10 +597,10 @@
       </div>
 
       <div class="signal-card">
-        <div style="padding: 14px 18px; border-bottom: 1px solid var(--border);">
+        <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
           <div class="attr-label">Правила темы</div>
         </div>
-        <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
           <div style="font-size: 13px; color: var(--text); line-height: 1.5;">Формула: <strong>существительное-объект</strong></div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Область продукта, не боль: Фильтры, Корзина, Поиск</div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Если область известна — тема = область. Если нет — тип проблемы: Сайт недоступен · Сайт тормозит · Сайт выдаёт ошибку</div>
@@ -609,10 +609,10 @@
       </div>
 
       <div class="signal-card">
-        <div style="padding: 14px 18px; border-bottom: 1px solid var(--border);">
+        <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
           <div class="attr-label">Неразмеченный если</div>
         </div>
-        <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Эмоция без объекта — «круто», «ужасно»</div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Только стоп-слова — «ок», «нет», «ага»</div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Клавиатурный мусор</div>
@@ -628,10 +628,10 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
 
         <div class="signal-card">
-          <div style="padding: 14px 18px; border-bottom: 1px solid var(--border);">
+          <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
             <div class="attr-label" style="margin-bottom: 0;">Принцип группировки</div>
           </div>
-          <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
             <div style="font-size: 13px; color: var(--text); line-height: 1.6;"><strong>Один комментарий → несколько сигналов → несколько тем</strong></div>
             <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Пользователь редко пишет об одном. «Зависает сайт, фильтры не работают, непонятен статус заказа» — три атомарных сигнала для трёх разных областей. Каждый должен попасть в свою тему независимо.</div>
             <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Комментарий — это контейнер. Единица анализа — сигнал, не комментарий.</div>
@@ -639,10 +639,10 @@
         </div>
 
         <div class="signal-card">
-          <div style="padding: 14px 18px; border-bottom: 1px solid var(--border);">
+          <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
             <div class="attr-label" style="margin-bottom: 0;">Принцип нейминга</div>
           </div>
-          <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
             <div style="font-size: 13px; color: var(--text); line-height: 1.6;"><strong>Тема = область продукта, не симптом</strong></div>
             <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Название темы должно отвечать на вопрос «где в продукте» — Фильтры, Корзина, Авторизация. Не «Нестабильная работа сайта», не «Долго», не «Быть».</div>
             <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Темы стабильны — они не меняются с каждым батчем фидбека. Меняются сигналы внутри них.</div>
@@ -654,10 +654,10 @@
     </div>
 
       <div class="signal-card">
-        <div style="padding: 14px 18px; border-bottom: 1px solid var(--border);">
+        <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
           <div class="attr-label">Правила сигнала</div>
         </div>
-        <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
           <div style="font-size: 13px; color: var(--text); line-height: 1.5;">Формула: <strong>глагол + объект</strong></div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Одна мысль = один сигнал</div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Без объекта сигнал не формируется — даже позитивный</div>
@@ -666,10 +666,10 @@
       </div>
 
       <div class="signal-card">
-        <div style="padding: 14px 18px; border-bottom: 1px solid var(--border);">
+        <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
           <div class="attr-label">Правила темы</div>
         </div>
-        <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
           <div style="font-size: 13px; color: var(--text); line-height: 1.5;">Формула: <strong>существительное-объект</strong></div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Область продукта, не боль: Фильтры, Корзина, Поиск</div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Если область известна — тема = область. Если нет — тип проблемы: Сайт недоступен · Сайт тормозит · Сайт выдаёт ошибку</div>
@@ -678,10 +678,10 @@
       </div>
 
       <div class="signal-card">
-        <div style="padding: 14px 18px; border-bottom: 1px solid var(--border);">
+        <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
           <div class="attr-label">Неразмеченный если</div>
         </div>
-        <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;">
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Эмоция без объекта — «круто», «ужасно»</div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Только стоп-слова — «ок», «нет», «ага»</div>
           <div style="font-size: 13px; color: var(--text-soft); line-height: 1.5;">Клавиатурный мусор</div>
@@ -828,9 +828,9 @@
 <div class="content-section" id="assistant">
 <div class="page" style="margin: 0; width: 100%;">
 
-  <div class="header" style="margin-bottom: 40px;">
+  <div class="header">
     <div class="header-eyebrow">AI Ассистент · Сценарии</div>
-    <h1 style="font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; letter-spacing: -0.03em; color: var(--text); letter-spacing: -0.02em; line-height: 1.15; margin-top: 8px;">Что умеет<br><span style="color: var(--accent);">ассистент</span></h1>
+    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em;">Что умеет<br><span style="color: var(--accent);">ассистент</span></h1>
   </div>
 
   <div class="section">
@@ -839,21 +839,8 @@
       <span class="section-title">Сравнение сегментов</span>
     </div>
 
-    <!-- ПРОБЛЕМАТИКА -->
-    <div style="margin-bottom: 32px;">
-      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px;">Смотреть на результаты опроса в целом — значит смотреть на среднее. Среднее скрывает: один сегмент может тянуть метрику вниз пока другой держит её на месте, и в общей картине это выглядит как "нормально".</p>
-      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px;">Разные группы замечают разные вещи. Продакт-менеджер и UX-ресёрчер используют продукт по-разному — и жалуются на разное. Пользователь мобильного приложения сталкивается с другими барьерами чем десктопный. Смешивать их в один поток — терять сигнал.</p>
-      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 16px;">Сравнение в разрезах — стандартная практика в продуктовых исследованиях. Его цель не описать каждую группу, а найти <strong style="color: var(--text);">разделитель</strong>: тему или паттерн, который статистически отличает одну группу от другой. Именно там обычно лежит следующий шаг.</p>
-      <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-        <span style="font-size: 11px; color: var(--text-muted);">Подробнее:</span>
-        <a href="https://www.nngroup.com/articles/analytics-persona-segment/" target="_blank" style="font-size: 11px; color: var(--blue); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">NN/G</a>
-        <a href="https://www.reforge.com/blog/what-is-user-segmentation" target="_blank" style="font-size: 11px; color: var(--blue); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">Reforge</a>
-        <a href="https://cobbai.com/blog/segmenting-customer-feedback" target="_blank" style="font-size: 11px; color: var(--blue); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">Cobbai</a>
-      </div>
-    </div>
-
     <!-- ЛОГИКА СЦЕНАРИЯ -->
-    <div style="margin-bottom: 32px;">
+    <div class="section" style="margin-bottom: 0;">
       <div class="attr-label" style="margin-bottom: 12px;">Как работает сценарий</div>
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
 
@@ -888,7 +875,7 @@
     </div>
 
     <!-- PARAMS -->
-    <div style="margin-bottom: 32px;">
+    <div class="section" style="margin-bottom: 0;">
       <div class="attr-label" style="margin-bottom: 12px;">Доступные параметры для сравнения</div>
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
 
@@ -938,12 +925,26 @@
 <div class="content-section" id="compare">
 <div class="page" style="margin: 0; width: 100%;">
 
-  <div class="header" style="margin-bottom: 40px;">
+  <div class="header">
     <div class="header-eyebrow">AI Ассистент · Сравнение сегментов</div>
-    <h1 style="font-family: 'Instrument Serif', Georgia, serif; font-size: 40px; font-weight: 400; color: var(--text); letter-spacing: -0.02em; line-height: 1.15; margin-top: 8px;">Сравнение<br><span style="color: var(--accent);">сегментов</span></h1>
+    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em; color: var(--text); letter-spacing: -0.02em; line-height: 1.15; margin-top: 8px;">Сравнение<br><span style="color: var(--accent);">сегментов</span></h1>
   </div>
 
-  <div class="section">
+    <!-- ПРОБЛЕМАТИКА -->
+    <div style="margin-bottom: 32px;">
+      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px;">Смотреть на результаты опроса в целом — значит смотреть на среднее. Среднее скрывает: один сегмент может тянуть метрику вниз пока другой держит её на месте, и в общей картине это выглядит как "нормально". Если этого не замечать — решения принимаются без контекста и не попадают ни в одну группу.</p>
+      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px;">Разные группы замечают разные вещи. Продакт-менеджер и UX-ресёрчер используют продукт по-разному — и жалуются на разное. Пользователь мобильного приложения сталкивается с другими барьерами чем десктопный. Смешивать их в один поток — терять сигнал.</p>
+      <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 16px;">Сравнение в разрезах — стандартная практика в продуктовых исследованиях. Его цель не описать каждую группу, а найти <strong style="color: var(--text);">разделитель</strong>: фактор, который объясняет разницу между группами. Именно там обычно лежит следующий шаг.</p>
+      <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+        <span style="font-size: 11px; color: var(--text-muted);">Подробнее:</span>
+        <a href="https://www.nngroup.com/articles/analytics-persona-segment/" target="_blank" style="font-size: 11px; color: var(--accent); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">NN/G — про когнитивные ограничения</a>
+        <a href="https://www.reforge.com/blog/what-is-user-segmentation" target="_blank" style="font-size: 11px; color: var(--accent); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">Reforge — как команды решают</a>
+        <a href="https://cobbai.com/blog/segmenting-customer-feedback" target="_blank" style="font-size: 11px; color: var(--accent); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">Cobbai — signal-based тренд</a>
+      </div>
+    </div>
+
+
+    <div class="section">
     <div class="section-header">
       <span class="section-num">01</span>
       <span class="section-title">Пример ответа</span>
@@ -994,30 +995,19 @@
                   </div>
                 </div>
 
-                <!-- Нейтралы -->
-                <div style="margin-bottom: 20px;">
-                  <div style="margin-bottom: 2px;"><span style="font-size: 12px; font-weight: 600; color: var(--text);">Нейтралы</span></div>
-                  <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 2px;">33 ответа · 32 комментария</div>
-                  <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">UX/CX Researcher 62% · Product Manager 25% · Other 13%</div>
-                  <div style="font-size: 12px; color: var(--text-soft); line-height: 1.7; margin-bottom: 10px;">В отличие от критиков, здесь меньше жалоб на баги и больше запросов на расширение функциональности. Доминирует <span style="color: var(--blue); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">конструктор</span> (10 упоминаний) — прототипы, матрицы, сложная логика. Отдельно выделяется тема <span style="color: var(--blue); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">инсайтов</span>: продукт собирает данные, но не помогает их интерпретировать.</div>
-                  <div style="display: flex; flex-direction: column; gap: 5px;">
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"Больше инструментов аналитики. Новые графики — это клево, но они позволяют сравнивать среднюю оценку и не более"</div>
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"матричные опросы, возможность вставлять прототипы в исследования"</div>
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"тяжело искать текстовый фидбек, чтобы понять почему упала оценка удовлетворенности"</div>
+                <!-- Нейтралы + Промоутеры — fade -->
+                <div style="position: relative; overflow: hidden;">
+                  <div style="opacity: 0.5;">
+                    <div style="margin-bottom: 2px;"><span style="font-size: 12px; font-weight: 600; color: var(--text);">Нейтралы</span></div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 2px;">33 ответа · 32 комментария</div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">UX/CX Researcher 62% · Product Manager 25% · Other 13%</div>
+                    <div style="font-size: 12px; color: var(--text-soft); line-height: 1.7; margin-bottom: 10px;">В отличие от критиков, здесь меньше жалоб на баги и больше запросов на расширение функциональности. Доминирует конструктор (10 упоминаний) — прототипы, матрицы, сложная логика.</div>
+                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px; margin-bottom: 20px;">"Больше инструментов аналитики. Новые графики — это клево, но они позволяют сравнивать среднюю оценку и не более"</div>
+                    <div style="margin-bottom: 2px;"><span style="font-size: 12px; font-weight: 600; color: var(--text);">Промоутеры</span></div>
+                    <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 2px;">112 ответов · 16 комментариев</div>
+                    <div style="font-size: 12px; color: var(--text-soft); line-height: 1.7; margin-bottom: 8px;">Молчат — только 14% написали что-то.</div>
                   </div>
-                </div>
-
-                <!-- Промоутеры -->
-                <div>
-                  <div style="margin-bottom: 2px;"><span style="font-size: 12px; font-weight: 600; color: var(--text);">Промоутеры</span></div>
-                  <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 2px;">112 ответов · 16 комментариев</div>
-                  <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">UX/CX Researcher 47% · Product Manager 24% · Other 13%</div>
-                  <div style="font-size: 12px; color: var(--text-soft); line-height: 1.7; margin-bottom: 10px;">Молчат — только 14% написали что-то. Те, кто написал, хвалят <span style="color: var(--blue); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">скорость и аналитику</span>, отмечают улучшения в UI. Конструктор упоминается вскользь и без негатива.</div>
-                  <div style="display: flex; flex-direction: column; gap: 5px;">
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"Удобные инструменты и супер быстрая аналитика"</div>
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"меняется UI, можно больше не перезапускать регулярные опросы, группировка метрик в аналитике по месяцам"</div>
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"В последнее время радует таргетинг по ID и что он работает"</div>
-                  </div>
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--bg-white));"></div>
                 </div>
 
               </div>
@@ -1044,9 +1034,9 @@
 <div class="content-section" id="engineering">
 <div class="page" style="margin: 0; width: 100%;">
 
-  <div class="header" style="margin-bottom: 40px;">
+  <div class="header">
     <div class="header-eyebrow">Для инженеров · Техническая документация</div>
-    <h1 style="font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; letter-spacing: -0.03em; color: var(--text); letter-spacing: -0.02em; line-height: 1.15; margin-top: 8px;">Алгоритм<br><span style="color: var(--accent);">и промпты</span></h1>
+    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em;">Алгоритм<br><span style="color: var(--accent);">и промпты</span></h1>
   </div>
 
   <div class="section">
