@@ -134,6 +134,7 @@
     display: none;
     padding: 56px 72px 80px;
     max-width: 100%;
+    box-sizing: border-box;
   }
   .content-section.active { display: block; }
   .page { max-width: 860px; }
@@ -300,10 +301,22 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-label">Разделы</div>
-    <a class="nav-item active" onclick="showSection('methodology')"><span class="icon">📐</span> Методология</a>
-    <a class="nav-item" onclick="showSection('assistant')"><span class="icon">✦</span> AI Ассистент</a>
-    <a class="nav-item" onclick="showSection('engineering')"><span class="icon">⚙️</span> Для инженеров</a>
+    <a class="nav-item active" data-section="methodology" onclick="showSection('methodology')">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
+      Методология
+    </a>
+    <a class="nav-item" data-section="assistant" onclick="showSection('assistant')">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M6 8h4M8 6v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      AI Ассистент
+    </a>
+    <a class="nav-item nav-sub" data-section="compare" onclick="showSection('compare')">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Сравнение сегментов
+    </a>
+    <a class="nav-item" data-section="engineering" onclick="showSection('engineering')">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      Для инженеров
+    </a>
   </div>
 </nav>
 
@@ -923,6 +936,28 @@
       </div>
     </div>
 
+
+  </div>
+
+</div>
+
+</div><!-- end assistant content-section -->
+
+
+<!-- COMPARE -->
+<div class="content-section" id="compare">
+<div class="page" style="margin: 0; width: 100%;">
+
+  <div class="header" style="margin-bottom: 40px;">
+    <div class="header-eyebrow">AI Ассистент · Сравнение сегментов</div>
+    <h1 style="font-family: 'Instrument Serif', Georgia, serif; font-size: 40px; font-weight: 400; color: var(--text); letter-spacing: -0.02em; line-height: 1.15; margin-top: 8px;">Сравнение<br><span style="color: var(--accent);">сегментов</span></h1>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Пример ответа</span>
+    </div>
     <!-- CHAT PROTOTYPE -->
     <div style="margin-top: 0;">
       <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden; max-width: 100%;">
@@ -1009,7 +1044,11 @@
   </div>
 
 </div>
-</div><!-- end assistant content-section -->
+  </div>
+
+
+</div>
+</div><!-- end compare content-section -->
 
 <!-- ENGINEERING -->
 <div class="content-section" id="engineering">
@@ -1066,7 +1105,7 @@ window.addEventListener('popstate', (e) => {
 // Load from URL hash on init
 window.addEventListener('DOMContentLoaded', () => {
   const hash = location.hash.replace('#', '');
-  const valid = ['methodology', 'assistant', 'engineering'];
+  const valid = ['methodology', 'assistant', 'compare', 'engineering'];
   showSection(valid.includes(hash) ? hash : 'methodology', false);
 });
 </script>
