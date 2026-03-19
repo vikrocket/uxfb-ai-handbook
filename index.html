@@ -266,6 +266,25 @@
   .type-card-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
   .type-card-desc { font-size: 12px; color: var(--text); line-height: 1.4; margin-bottom: 8px; }
   .type-card-routing { font-size: 11px; color: var(--text-muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1200px) {
+    .content-section { padding: 48px 56px 80px; }
+    .page { max-width: 100%; }
+  }
+  @media (max-width: 900px) {
+    .sidebar { width: 200px; }
+    .main { margin-left: 200px; }
+    .content-section { padding: 40px 40px 80px; }
+  }
+  @media (max-width: 700px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .content-section { padding: 32px 24px 60px; }
+    .types-grid { grid-template-columns: repeat(2, 1fr); }
+    .review-row { grid-template-columns: 1fr; }
+    .review-arrow { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -302,7 +321,7 @@
 
   <!-- INTRO -->
   <div class="section">
-    <div style="max-width: 600px; display: flex; flex-direction: column; gap: 16px; margin-bottom: 0;">
+    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 0;">
       <p style="font-size: 15px; color: var(--text-soft); line-height: 1.7;">Фидбека всегда много — но в сыром виде с ним сложно работать. Комментарий приходит, и прежде чем кто-то решит что с ним делать, делать ли вообще и когда — проходит время. Часть теряется, часть зависает без ответа.</p>
       <p style="font-size: 15px; color: var(--text-soft); line-height: 1.7;"><span style="color: var(--text-muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px;">Гипотеза</span>Если структурировать фидбек в момент получения — дать каждому наблюдению чёткую формулировку, тип и контекст — решение о следующем шаге становится очевидным. Не нужно разбираться с нуля каждый раз.</p>
       <p style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); line-height: 1.4; margin-top: 4px;">Так работают сигналы.</p>
@@ -317,7 +336,7 @@
       <span class="section-num">01</span>
       <span class="section-title">Из комментария в сигнал</span>
     </div>
-    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px; max-width: 560px;">Сигнал — минимальная единица наблюдения: одна мысль, один факт, одна реакция. Сигнал создаётся с первого упоминания. <strong style="color: var(--text);">Один комментарий может содержать несколько сигналов.</strong> Для определения сигнала мы загружаем больше контекста, чем просто текст комментария: <strong style="color: var(--text);">структуру опроса, вопрос и сам ответ.</strong></p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px;">Сигнал — минимальная единица наблюдения: одна мысль, один факт, одна реакция. Сигнал создаётся с первого упоминания. <strong style="color: var(--text);">Один комментарий может содержать несколько сигналов.</strong> Для определения сигнала мы загружаем больше контекста, чем просто текст комментария: <strong style="color: var(--text);">структуру опроса, вопрос и сам ответ.</strong></p>
     <div class="reviews-grid">
 
       <div class="review-row">
@@ -396,7 +415,7 @@
       <span class="section-num">02</span>
       <span class="section-title">Анатомия одного сигнала</span>
     </div>
-    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px; max-width: 560px;">Сигнал формулируется как <strong style="color: var(--text);">глагол + объект</strong> — по аналогии с заголовком задачи в Jira. Боль и действие живут в сигнале, не в теме.</p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px;">Сигнал формулируется как <strong style="color: var(--text);">глагол + объект</strong> — по аналогии с заголовком задачи в Jira. Боль и действие живут в сигнале, не в теме.</p>
     <div style="display: flex; gap: 8px; margin-bottom: 24px;">
       <span class="attr-tag" style="color: var(--green); border-color: var(--green-bg);">✓ не работают фильтры</span>
       <span class="attr-tag" style="color: var(--text-muted);">✗ проблемы с фильтрами</span>
@@ -455,7 +474,7 @@
       <span class="section-num">03</span>
       <span class="section-title">Типы сигналов</span>
     </div>
-    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px; max-width: 560px;">Тип отражает намерение пользователя за высказыванием. Он определяет кому сигнал передаётся внутри команды и как учитывается при расстановке приоритетов.</p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px;">Тип отражает намерение пользователя за высказыванием. Он определяет кому сигнал передаётся внутри команды и как учитывается при расстановке приоритетов.</p>
     <div class="types-grid">
       <div class="type-card">
         <span class="type-card-badge type-ne-rabotaet">Не работает</span>
@@ -493,8 +512,8 @@
       <span class="section-num">04</span>
       <span class="section-title">Из сигналов в тему</span>
     </div>
-    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px; max-width: 560px;">Сигнал формируется из одного упоминания. Когда таких похожих сигналов накапливается <strong style="color: var(--text);">4 и больше</strong> — система автоматически объединяет их в тему. Меньше 4 — сигналы остаются одиночками и в тему не складываются.</p>
-    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px; max-width: 560px;">Тема — это <strong style="color: var(--text);">область продукта</strong>, не боль. Название темы — существительное-объект: Отчёты, Фильтры, Онбординг. Темы стабильны — они не меняются с каждым батчем фидбека, сигналы внутри них меняются. Область определяется не только из текста комментария — система учитывает <strong style="color: var(--text);">название компании, структуру опроса и вопрос</strong>. Это помогает правильно классифицировать короткие или неоднозначные ответы.</p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px;">Сигнал формируется из одного упоминания. Когда таких похожих сигналов накапливается <strong style="color: var(--text);">4 и больше</strong> — система автоматически объединяет их в тему. Меньше 4 — сигналы остаются одиночками и в тему не складываются.</p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px;">Тема — это <strong style="color: var(--text);">область продукта</strong>, не боль. Название темы — существительное-объект: Отчёты, Фильтры, Онбординг. Темы стабильны — они не меняются с каждым батчем фидбека, сигналы внутри них меняются. Область определяется не только из текста комментария — система учитывает <strong style="color: var(--text);">название компании, структуру опроса и вопрос</strong>. Это помогает правильно классифицировать короткие или неоднозначные ответы.</p>
 
     <div class="cluster-card">
       <div class="cluster-header">
@@ -557,7 +576,7 @@
       <span class="section-num">05</span>
       <span class="section-title">Алгоритм и промпт</span>
     </div>
-    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px; max-width: 560px;">Разметка происходит в два шага: LLM извлекает атомарные сигналы из каждого комментария по правилам, затем кластер группирует готовые сигналы по теме.</p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px;">Разметка происходит в два шага: LLM извлекает атомарные сигналы из каждого комментария по правилам, затем кластер группирует готовые сигналы по теме.</p>
 
     <!-- RULES -->
     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 24px;">
@@ -818,7 +837,7 @@
     </div>
 
     <!-- ПРОБЛЕМАТИКА -->
-    <div style="margin-bottom: 32px; max-width: 600px;">
+    <div style="margin-bottom: 32px;">
       <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px;">Смотреть на результаты опроса в целом — значит смотреть на среднее. Среднее скрывает: один сегмент может тянуть метрику вниз пока другой держит её на месте, и в общей картине это выглядит как "нормально".</p>
       <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px;">Разные группы замечают разные вещи. Продакт-менеджер и UX-ресёрчер используют продукт по-разному — и жалуются на разное. Пользователь мобильного приложения сталкивается с другими барьерами чем десктопный. Смешивать их в один поток — терять сигнал.</p>
       <p style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 16px;">Сравнение в разрезах — стандартная практика в продуктовых исследованиях. Его цель не описать каждую группу, а найти <strong style="color: var(--text);">разделитель</strong>: тему или паттерн, который статистически отличает одну группу от другой. Именно там обычно лежит следующий шаг.</p>
@@ -906,7 +925,7 @@
 
     <!-- CHAT PROTOTYPE -->
     <div style="margin-top: 0;">
-      <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden; max-width: 640px;">
+      <div style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden; max-width: 100%;">
 
         <!-- Messages -->
         <div style="padding: 20px 16px; display: flex; flex-direction: column; gap: 16px; background: var(--bg);">
@@ -1006,7 +1025,7 @@
       <span class="section-num">—</span>
       <span class="section-title">Алгоритм и промпты</span>
     </div>
-    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px; max-width: 560px;">Раздел в процессе. Здесь будут технические детали алгоритма кластеризации, промпты для разметки и генерации названий, описание пробелов в текущей архитектуре.</p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px;">Раздел в процессе. Здесь будут технические детали алгоритма кластеризации, промпты для разметки и генерации названий, описание пробелов в текущей архитектуре.</p>
     <div style="border: 1px dashed var(--border); border-radius: 8px; padding: 24px; color: var(--text-muted); font-size: 13px; text-align: center;">
       🚧 В разработке — сюда переедет содержимое блока 05 из методологии
     </div>
