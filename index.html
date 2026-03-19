@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atomic Signals</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --surface: #f7f7f5;
+    --border: #e8e8e5;
+    --border-soft: #f0f0ed;
+    --text: #1a1a1a;
+    --text-soft: #6b6b6b;
+    --text-muted: #a0a0a0;
+    --red: #c94040; --red-bg: #f7f3f3;
+    --green: #2d8f60; --green-bg: #f2f7f4;
+    --purple: #7a42b0; --purple-bg: #f4f1f8;
+    --blue: #3570d4; --blue-bg: #f1f4fb;
+    --amber: #b86a00; --amber-bg: #f7f3ee;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 56px 48px;
+  }
+
+  .page { max-width: 880px; margin: 0 auto; }
+
+  .header { margin-bottom: 64px; }
+  .header-eyebrow {
+    font-size: 12px; font-weight: 500; color: var(--text-muted);
+    letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: 28px; font-weight: 600; color: var(--text);
+    letter-spacing: -0.02em; line-height: 1.2;
+  }
+
+  .section { margin-bottom: 64px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-num { font-size: 12px; font-weight: 500; color: var(--text-muted); min-width: 20px; }
+  .section-title { font-size: 13px; font-weight: 600; color: var(--text); letter-spacing: 0.01em; text-transform: uppercase; }
+  .section-divider { height: 1px; background: var(--border-soft); margin-bottom: 64px; }
+
+  /* REVIEWS */
+  .reviews-grid { display: flex; flex-direction: column; gap: 0; }
+  .review-row { display: grid; grid-template-columns: 1fr 36px 1fr; align-items: center; gap: 0; margin-bottom: 10px; }
+  .review-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px 20px;
+  }
+  .review-box-muted { background: var(--bg); border-color: var(--border-soft); }
+  .review-quote { font-size: 14px; color: var(--text); line-height: 1.6; }
+  .review-quote-muted { color: var(--text-muted); }
+
+  mark { background: none; font-weight: 400; border-radius: 3px; padding: 1px 4px; }
+  .hl-red    { background: var(--red-bg);    color: var(--red); }
+  .hl-green  { background: var(--green-bg);  color: var(--green); }
+  .hl-purple { background: var(--purple-bg); color: var(--purple); }
+  .hl-blue   { background: var(--blue-bg);   color: var(--blue); }
+
+  .review-arrow { text-align: center; font-size: 14px; color: var(--border); }
+  .review-arrow-muted { color: var(--border-soft); }
+
+  .signals-col { display: flex; flex-direction: column; gap: 6px; }
+  .signal-pill {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 10px 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .signal-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .dot-red    { background: var(--red); }
+  .dot-green  { background: var(--green); }
+  .dot-purple { background: var(--purple); }
+  .dot-blue   { background: var(--blue); }
+
+  .signal-text { font-size: 13px; color: var(--text); flex: 1; }
+  .signal-type {
+    font-size: 11px; font-weight: 500; padding: 2px 8px;
+    border-radius: 4px; white-space: nowrap; flex-shrink: 0;
+  }
+  .type-ne-rabotaet { background: var(--red-bg);    color: var(--red); }
+  .type-neudobno    { background: var(--amber-bg);  color: var(--amber); }
+  .type-neponyatno  { background: var(--blue-bg);   color: var(--blue); }
+  .type-predlagayu  { background: var(--green-bg);  color: var(--green); }
+  .type-nravitsya   { background: var(--purple-bg); color: var(--purple); }
+
+  .untagged-block {
+    border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px;
+    display: flex; align-items: flex-start; gap: 10px;
+    background: var(--surface);
+  }
+  .untagged-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--text-muted); flex-shrink: 0; margin-top: 5px;
+  }
+  .untagged-label {
+    font-size: 11px; font-weight: 600; color: var(--text-soft);
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px;
+  }
+  .untagged-desc { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+
+  /* SIGNAL CARD */
+  .signal-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .card-top {
+    padding: 20px 24px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  }
+  .card-signal-label {
+    font-size: 11px; font-weight: 500; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px;
+  }
+  .card-signal-text { font-size: 18px; font-weight: 500; color: var(--text); letter-spacing: -0.01em; }
+  .card-type-badge {
+    font-size: 12px; font-weight: 500; padding: 4px 10px;
+    border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+  }
+  .card-attrs { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
+  .attr-cell { padding: 16px 24px; border-right: 1px solid var(--border); }
+  .attr-cell:last-child { border-right: none; }
+  .attr-label {
+    font-size: 11px; font-weight: 500; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;
+  }
+  .attr-value { font-size: 24px; font-weight: 600; color: var(--text); letter-spacing: -0.02em; line-height: 1; margin-bottom: 4px; }
+  .attr-sub { font-size: 12px; color: var(--text-soft); }
+  .attr-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
+  .attr-tag {
+    font-size: 12px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px; color: var(--text-soft);
+  }
+  .card-quotes { padding: 16px 24px; }
+  .quotes-label {
+    font-size: 11px; font-weight: 500; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px;
+  }
+  .quotes-list { display: flex; flex-direction: column; gap: 8px; }
+  .quote-item { display: flex; gap: 10px; align-items: flex-start; }
+  .quote-bar { width: 2px; background: var(--border); border-radius: 2px; flex-shrink: 0; align-self: stretch; }
+  .quote-text { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+
+  .va-card {
+    border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  }
+
+  .va-quote {
+    background: var(--surface); padding: 14px 18px;
+    font-size: 14px; color: var(--text); line-height: 1.6;
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+
+  .va-quote-icon { color: var(--text-muted); font-size: 16px; flex-shrink: 0; }
+
+  .va-signals-col {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+
+  .va-signal {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 10px 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .va-signal-text { font-size: 13px; color: var(--text); flex: 1; }
+
+  /* CLUSTER CARD */
+  .cluster-card {
+    border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  }
+
+  .cluster-header {
+    padding: 20px 24px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  }
+
+  .cluster-label {
+    font-size: 11px; font-weight: 500; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px;
+  }
+
+  .cluster-title {
+    font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -0.02em;
+  }
+
+  .cluster-stats {
+    display: flex; align-items: center; gap: 16px; flex-shrink: 0; margin-top: 4px;
+  }
+
+  .cluster-stat { text-align: right; }
+
+  .cluster-stat-value {
+    font-size: 20px; font-weight: 600; color: var(--text);
+    letter-spacing: -0.02em; line-height: 1;
+  }
+
+  .cluster-stat-label {
+    font-size: 11px; color: var(--text-muted); margin-top: 3px;
+  }
+
+  .cluster-stat-divider {
+    width: 1px; height: 32px; background: var(--border);
+  }
+
+  .cluster-signals {
+    display: flex; flex-direction: column;
+  }
+
+  .cluster-signal {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 24px; border-bottom: 1px solid var(--border-soft);
+  }
+
+  .cluster-signal:last-child { border-bottom: none; }
+
+  .cluster-signal-text {
+    font-size: 13px; color: var(--text); flex: 1;
+  }
+
+  .cluster-signal-freq {
+    font-size: 12px; color: var(--text-muted); flex-shrink: 0; min-width: 28px; text-align: right;
+  }
+
+  /* TYPES */
+  .types-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .type-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .type-card-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
+  .type-card-desc { font-size: 12px; color: var(--text); line-height: 1.4; margin-bottom: 8px; }
+  .type-card-routing { font-size: 11px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header" style="margin-bottom: 32px;">
+    <div class="header-eyebrow">UX Feedback · Принцип обработки фидбека</div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="section">
+    <div style="max-width: 600px; display: flex; flex-direction: column; gap: 16px; margin-bottom: 0;">
+      <p style="font-size: 15px; color: var(--text-soft); line-height: 1.7;">Фидбека всегда много — но в сыром виде с ним сложно работать. Комментарий приходит, и прежде чем кто-то решит что с ним делать, делать ли вообще и когда — проходит время. Часть теряется, часть зависает без ответа.</p>
+      <p style="font-size: 15px; color: var(--text-soft); line-height: 1.7;"><span style="color: var(--text-muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px;">Гипотеза</span>Если структурировать фидбек в момент получения — дать каждому наблюдению чёткую формулировку, тип и контекст — решение о следующем шаге становится очевидным. Не нужно разбираться с нуля каждый раз.</p>
+      <p style="font-size: 15px; color: var(--text); font-weight: 500; line-height: 1.7;">Так работают сигналы.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 01 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Из комментария в сигнал</span>
+    </div>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px; max-width: 560px;">Сигнал — минимальная единица наблюдения: одна мысль, один факт, одна реакция. Сигнал создаётся с первого упоминания. <strong style="color: var(--text);">Один комментарий может содержать несколько сигналов.</strong> Для определения сигнала мы загружаем больше контекста, чем просто текст комментария: <strong style="color: var(--text);">структуру опроса, вопрос и сам ответ.</strong></p>
+    <div class="reviews-grid">
+
+      <div class="review-row">
+        <div class="va-card">
+          <div class="va-quote"><span class="va-quote-icon">«</span><span><mark class="hl-red">Фильтры не работают</mark>, ничего не фильтрует. <mark class="hl-green">Мало фильтров</mark> для выбора»</span></div>
+        </div>
+        <div class="review-arrow">→</div>
+        <div class="va-signals-col">
+          <div class="va-signal">
+            <span class="signal-dot dot-red"></span>
+            <span class="va-signal-text">Не работают фильтры</span>
+            <span class="signal-type type-ne-rabotaet">не работает</span>
+          </div>
+          <div class="va-signal">
+            <span class="signal-dot dot-green"></span>
+            <span class="va-signal-text">Не хватает фильтров</span>
+            <span class="signal-type type-predlagayu">предлагаю</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-row" style="margin-bottom: 10px;">
+        <div class="va-card">
+          <div class="va-quote"><span class="va-quote-icon">«</span><span><mark class="hl-blue">Не понимаю</mark>, что имеется в виду ширина, а что длина. <mark class="hl-green">Нет фильтра</mark> по размеру дивана»</span></div>
+        </div>
+        <div class="review-arrow">→</div>
+        <div class="va-signals-col">
+          <div class="va-signal">
+            <span class="signal-dot dot-blue"></span>
+            <span class="va-signal-text">Непонятно что такое длина/ширина/глубина</span>
+            <span class="signal-type type-neponyatno">непонятно</span>
+          </div>
+          <div class="va-signal">
+            <span class="signal-dot dot-green"></span>
+            <span class="va-signal-text">Нет фильтра по размеру дивана</span>
+            <span class="signal-type type-predlagayu">предлагаю</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 1px; border-top: 1px dashed var(--border); margin: 4px 0 14px;"></div>
+
+      <div class="review-row" style="margin-bottom: 0;">
+        <div class="va-card">
+          <div class="va-quote"><span class="va-quote-icon">«</span><span>Всё ок»</span></div>
+        </div>
+        <div class="review-arrow">→</div>
+        <div class="va-signals-col">
+          <div class="va-signal" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+              <span class="signal-dot" style="background: var(--text-muted);"></span>
+              <span class="va-signal-text">нет конкретного наблюдения</span>
+              <span class="signal-type" style="background: var(--surface); color: var(--text-soft);">неразмеченный</span>
+            </div>
+            <div style="padding-left: 16px; display: flex; flex-direction: column; gap: 4px;">
+              <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">Сигнал не формируется если ответ:</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px;">
+                <span class="attr-tag">только стоп-слова — «ок», «нет», «ага»</span>
+                <span class="attr-tag">одно слово-эмоция — «ужасно», «отстой»</span>
+                <span class="attr-tag">клавиатурный мусор — «пфтбкф»</span>
+                <span class="attr-tag">меньше 4 букв</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Анатомия одного сигнала</span>
+    </div>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px; max-width: 560px;">Сигнал формулируется как <strong style="color: var(--text);">глагол + объект</strong> — по аналогии с заголовком задачи в Jira. Боль и действие живут в сигнале, не в теме.</p>
+    <div style="display: flex; gap: 8px; margin-bottom: 24px;">
+      <span class="attr-tag" style="color: var(--green); border-color: var(--green-bg);">✓ не работают фильтры</span>
+      <span class="attr-tag" style="color: var(--text-muted);">✗ проблемы с фильтрами</span>
+    </div>
+    <div class="signal-card">
+      <div class="card-top">
+        <div>
+          <div class="card-signal-label">Сигнал</div>
+          <div class="card-signal-text">Не работают фильтры</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; margin-top: 2px;">
+          <div style="font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;">Тип сигнала</div>
+          <span class="card-type-badge type-ne-rabotaet">Не работает</span>
+        </div>
+      </div>
+      <div class="card-attrs">
+        <div class="attr-cell">
+          <div class="attr-label">Частота</div>
+          <div class="attr-value">18</div>
+          <div class="attr-sub">пользователей упомянули</div>
+        </div>
+        <div class="attr-cell">
+          <div class="attr-label">Сегмент</div>
+          <div class="attr-tags" style="margin-top: 4px;">
+            <span class="attr-tag">Критики · 11 · 60%</span>
+            <span class="attr-tag">Researchers · 5 · 25%</span>
+            <span class="attr-tag">Product managers · 2 · 15%</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-quotes">
+        <div class="quotes-label">Цитаты</div>
+        <div class="quotes-list">
+          <div class="quote-item">
+            <div class="quote-bar"></div>
+            <div class="quote-text">Фильтры не работают, ничего не фильтрует</div>
+          </div>
+          <div class="quote-item">
+            <div class="quote-bar"></div>
+            <div class="quote-text">Не работает фильтр. Выбираю кровать</div>
+          </div>
+          <div class="quote-item">
+            <div class="quote-bar"></div>
+            <div class="quote-text">Сайт плохо работает на мобильном устройстве, невозможно выбрать фильтры</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Типы сигналов</span>
+    </div>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px; max-width: 560px;">Тип отражает намерение пользователя за высказыванием. Он определяет кому сигнал передаётся внутри команды и как учитывается при расстановке приоритетов.</p>
+    <div class="types-grid">
+      <div class="type-card">
+        <span class="type-card-badge type-ne-rabotaet">Не работает</span>
+        <div class="type-card-desc">Сломано или неприемлемо медленно</div>
+        <div class="type-card-routing">Инженеры</div>
+      </div>
+      <div class="type-card">
+        <span class="type-card-badge type-neudobno">Неудобно</span>
+        <div class="type-card-desc">Работает, но мешает или раздражает</div>
+        <div class="type-card-routing">Дизайнер</div>
+      </div>
+      <div class="type-card">
+        <span class="type-card-badge type-neponyatno">Непонятно</span>
+        <div class="type-card-desc">Не понимает как пользоваться или что это</div>
+        <div class="type-card-routing">Контент, онбординг</div>
+      </div>
+      <div class="type-card">
+        <span class="type-card-badge type-predlagayu">Предлагаю</span>
+        <div class="type-card-desc">Хочет чего-то нового</div>
+        <div class="type-card-routing">Продуктовый беклог</div>
+      </div>
+      <div class="type-card">
+        <span class="type-card-badge type-nravitsya">Нравится</span>
+        <div class="type-card-desc">Позитивный сигнал без запроса</div>
+        <div class="type-card-routing">Сигнал силы</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Из сигналов в тему</span>
+    </div>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px; max-width: 560px;">Сигнал формируется из одного упоминания. Когда таких похожих сигналов накапливается <strong style="color: var(--text);">4 и больше</strong> — система автоматически объединяет их в тему. Меньше 4 — сигналы остаются одиночками и в тему не складываются.</p>
+    <p style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 24px; max-width: 560px;">Тема — это <strong style="color: var(--text);">область продукта</strong>, не боль. Название темы — существительное-объект: Отчёты, Фильтры, Онбординг. Темы стабильны — они не меняются с каждым батчем фидбека, сигналы внутри них меняются. Область определяется не только из текста комментария — система учитывает <strong style="color: var(--text);">название компании, структуру опроса и вопрос</strong>. Это помогает правильно классифицировать короткие или неоднозначные ответы.</p>
+
+    <div class="cluster-card">
+      <div class="cluster-header">
+        <div class="cluster-meta">
+          <div class="cluster-label">Тема</div>
+          <div class="cluster-title">Фильтры</div>
+          <div class="attr-tags" style="margin-top: 10px;">
+            <span class="attr-tag">Критики · 60%</span>
+            <span class="attr-tag">Researchers · 25%</span>
+            <span class="attr-tag">Product managers · 15%</span>
+          </div>
+        </div>
+        <div class="cluster-stats">
+          <div class="cluster-stat">
+            <div class="cluster-stat-value">35</div>
+            <div class="cluster-stat-label">сигнала</div>
+          </div>
+          <div class="cluster-stat-divider"></div>
+          <div class="cluster-stat">
+            <div class="cluster-stat-value">60%</div>
+            <div class="cluster-stat-label">предлагаю</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cluster-signals">
+        <div class="cluster-signal">
+          <span class="signal-dot dot-red"></span>
+          <span class="cluster-signal-text">Не работают фильтры</span>
+          <span class="signal-type type-ne-rabotaet">не работает</span>
+          <span class="cluster-signal-freq">×12</span>
+        </div>
+        <div class="cluster-signal">
+          <span class="signal-dot dot-green"></span>
+          <span class="cluster-signal-text">Не хватает фильтров</span>
+          <span class="signal-type type-predlagayu">предлагаю</span>
+          <span class="cluster-signal-freq">×9</span>
+        </div>
+        <div class="cluster-signal">
+          <span class="signal-dot dot-green"></span>
+          <span class="cluster-signal-text">Нет фильтра по размерам</span>
+          <span class="signal-type type-predlagayu">предлагаю</span>
+          <span class="cluster-signal-freq">×8</span>
+        </div>
+        <div class="cluster-signal">
+          <span class="signal-dot dot-blue"></span>
+          <span class="cluster-signal-text">Непонятно что такое длина/ширина/глубина</span>
+          <span class="signal-type type-neponyatno">непонятно</span>
+          <span class="cluster-signal-freq">×6</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
