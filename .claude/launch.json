@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Static Server",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-e", "require 'webrick'; WEBrick::HTTPServer.new(Port: 3000, DocumentRoot: '/tmp/uxfb-handbook').start"],
+      "port": 3000
+    }
+  ]
+}
