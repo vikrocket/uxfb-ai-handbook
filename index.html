@@ -11,10 +11,10 @@
 
   :root {
     /* Colours */
-    --bg: #fafaf8;
-    --surface: #f0efe9;
-    --border: #e4e3df;
-    --border-soft: #eeede9;
+    --bg: #f4f3ee;
+    --surface: #eae8e1;
+    --border: #e0ddd5;
+    --border-soft: #e8e5de;
     --text: #1c1c1a;
     --text-soft: #5e5e5c;
     --text-muted: #9e9e9b;
@@ -216,7 +216,7 @@
   .type-predlagayu { color: var(--green); background: var(--green-bg); }
   .type-nravitsya { color: var(--purple); background: var(--purple-bg); }
 
-  .reviews-grid { display: flex; flex-direction: column; gap: 12px; }
+  .reviews-grid { display: flex; flex-direction: column; gap: 16px; }
   .review-row { display: grid; grid-template-columns: 1fr 32px 1fr; gap: 12px; align-items: start; }
   .review-arrow { display: flex; align-items: flex-start; justify-content: center; padding-top: 14px; font-size: 16px; color: var(--text-muted); }
 
@@ -351,7 +351,7 @@
 
   <!-- INTRO -->
   <div class="section">
-    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 0;">
+    <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 0;">
       <p style="font-size: 15px; color: var(--text-soft); line-height: 1.7;">Фидбека всегда много — но в сыром виде с ним сложно работать. Комментарий приходит, и прежде чем кто-то решит что с ним делать, делать ли вообще и когда — проходит время. Часть теряется, часть зависает без ответа.</p>
       <p style="font-size: 15px; color: var(--text-soft); line-height: 1.7;"><span style="color: var(--text-muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px;">Гипотеза</span>Если структурировать фидбек в момент получения — дать каждому наблюдению чёткую формулировку, тип и контекст — решение о следующем шаге становится очевидным. Не нужно разбираться с нуля каждый раз.</p>
       <p style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); line-height: 1.4; margin-top: 4px;">Так работают сигналы.</p>
@@ -366,7 +366,7 @@
       <span class="section-num">01</span>
       <span class="section-title">Из комментария в сигнал</span>
     </div>
-    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 20px;">Сигнал — минимальная единица наблюдения: одна мысль, один факт, одна реакция. Сигнал создаётся с первого упоминания. <strong style="color: var(--text);">Один комментарий может содержать несколько сигналов.</strong> Для определения сигнала мы загружаем больше контекста, чем просто текст комментария: <strong style="color: var(--text);">структуру опроса, вопрос и сам ответ.</strong></p>
+    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 24px;">Сигнал — минимальная единица наблюдения: одна мысль, один факт, одна реакция. Сигнал создаётся с первого упоминания. <strong style="color: var(--text);">Один комментарий может содержать несколько сигналов.</strong> Для определения сигнала мы загружаем больше контекста, чем просто текст комментария: <strong style="color: var(--text);">структуру опроса, вопрос и сам ответ.</strong></p>
     <div class="reviews-grid">
 
       <div class="review-row">
@@ -445,7 +445,7 @@
       <span class="section-num">02</span>
       <span class="section-title">Анатомия одного сигнала</span>
     </div>
-    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 20px;">Сигнал формулируется как <strong style="color: var(--text);">глагол + объект</strong> — по аналогии с заголовком задачи в Jira. Боль и действие живут в сигнале, не в теме.</p>
+    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 24px;">Сигнал формулируется как <strong style="color: var(--text);">глагол + объект</strong> — по аналогии с заголовком задачи в Jira. Боль и действие живут в сигнале, не в теме.</p>
     <div style="display: flex; gap: 8px; margin-bottom: 24px;">
       <span class="attr-tag" style="color: var(--green); border-color: var(--green-bg);">✓ не работают фильтры</span>
       <span class="attr-tag" style="color: var(--text-muted);">✗ проблемы с фильтрами</span>
