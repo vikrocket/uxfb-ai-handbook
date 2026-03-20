@@ -11,10 +11,11 @@
 
   :root {
     /* Colours */
-    --bg: #f4f3ee;
-    --surface: #eae8e1;
+    --bg: #f0efeb;       /* page background — neutral G485-like */
+    --bg-card: #ffffff;  /* card / content surfaces */
+    --surface: #e8e7e2;  /* code blocks, inset areas */
     --border: #e0ddd5;
-    --border-soft: #e8e5de;
+    --border-soft: #e8e6df;
     --text: #1c1c1a;
     --text-soft: #5e5e5c;
     --text-muted: #9e9e9b;
@@ -185,7 +186,7 @@
   .section-divider { height: 1px; background: var(--border); margin: 44px 0; }
 
   /* CARDS */
-  .signal-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg); }
+  .signal-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-card); }
 
   .attr-label {
     font-size: 11px; font-weight: 600; color: var(--text-muted);
@@ -220,7 +221,7 @@
   .review-row { display: grid; grid-template-columns: 1fr 32px 1fr; gap: 12px; align-items: start; }
   .review-arrow { display: flex; align-items: flex-start; justify-content: center; padding-top: 14px; font-size: 16px; color: var(--text-muted); }
 
-  .va-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .va-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
   .va-quote { font-size: 14px; color: var(--text); line-height: 1.65; display: flex; gap: 6px; }
   .va-quote-icon { font-size: 18px; color: var(--text-muted); line-height: 1; flex-shrink: 0; }
 
@@ -230,7 +231,7 @@
   mark.hl-blue { background: var(--blue-bg); color: var(--accent); }
 
   .va-signals-col { display: flex; flex-direction: column; gap: 6px; padding-top: 6px; }
-  .va-signal { display: flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; }
+  .va-signal { display: flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; }
   .va-signal-text { font-size: 12px; color: var(--text); flex: 1; }
 
   .untagged-row { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
@@ -238,7 +239,7 @@
   .untagged-criteria { display: flex; flex-wrap: wrap; gap: 6px; }
   .untagged-criterion { font-size: 11px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; }
 
-  .signal-anatomy { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; max-width: 480px; }
+  .signal-anatomy { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; max-width: 480px; }
   .anatomy-header { padding: 14px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
   .anatomy-title { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
   .anatomy-rows { display: flex; flex-direction: column; }
@@ -253,7 +254,7 @@
   .attr-sub { font-size: 12px; color: var(--text-soft); }
   .attr-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
 
-  .cluster-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .cluster-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
   .cluster-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--border); gap: 16px; }
   .cluster-title { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
   .cluster-meta { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
@@ -283,7 +284,7 @@
   .quote-text { font-size: 13px; color: var(--text); line-height: 1.6; }
 
   .types-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-  .type-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .type-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
   .type-card-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
   .type-card-desc { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; }
   .type-card-routing { font-size: 11px; color: var(--text-muted); }
@@ -943,7 +944,7 @@
     </div>
     <!-- CHAT PROTOTYPE -->
     <div style="margin-top: 0;">
-      <div style="border: 1px solid var(--border-soft); border-radius: 10px; overflow: hidden; max-width: 100%; background: var(--bg);">
+      <div style="border: 1px solid var(--border-soft); border-radius: 10px; overflow: hidden; max-width: 100%; background: var(--bg-card);">
 
         <!-- Messages -->
         <div style="padding: 20px 16px; display: flex; flex-direction: column; gap: 16px; background: var(--bg);">
