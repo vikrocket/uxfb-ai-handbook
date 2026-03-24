@@ -200,6 +200,38 @@
     border: 1px solid var(--border); border-radius: 4px; padding: 1px 7px;
   }
 
+  /* Role tags — coloured like Figma */
+  .role-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 500; border-radius: 20px;
+    padding: 3px 9px; border: 1px solid transparent;
+  }
+  .role-tag::before { content: ''; display: inline-block; width: 14px; height: 14px; background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7' cy='4.5' r='2.5' fill='%23888'/%3E%3Cpath d='M2 11c0-2.761 2.239-5 5-5s5 2.239 5 5' stroke='%23888' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: contain; opacity: 0.5; }
+  .role-tag-green  { background: #edf7ee; border-color: #c3e6c5; color: #2d6b30; }
+  .role-tag-yellow { background: #fef9ec; border-color: #f0dfa0; color: #7a5c00; }
+  .role-tag-pink   { background: #fef0f4; border-color: #f5c6d4; color: #8b1a3a; }
+  .role-tag-blue   { background: #eef2ff; border-color: #c7d3f7; color: #2d3ca6; }
+  .role-tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0 10px; }
+
+  /* Segment card */
+  .segment-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-md); overflow: hidden; margin-bottom: 8px;
+  }
+  .segment-card-body { padding: 14px 16px; }
+  .segment-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .segment-meta { font-size: 11px; color: var(--text-muted); margin-bottom: 0; }
+  .segment-summary { font-size: 13px; color: var(--text-soft); line-height: 1.65; margin-bottom: 10px; }
+  .segment-show-btn {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    width: 100%; padding: 8px 12px; font-size: 12px; font-weight: 500;
+    color: var(--text-soft); background: var(--surface); border: none;
+    border-top: 1px solid var(--border); cursor: pointer; letter-spacing: 0.01em;
+  }
+  .segment-show-btn:hover { background: var(--border); }
+  .segment-quotes { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
+  .segment-quote { font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px; line-height: 1.55; }
+
   .signal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .dot-red { background: var(--red); }
   .dot-amber { background: var(--amber); }
@@ -368,21 +400,6 @@
       <span class="section-title">Из комментария в сигнал</span>
     </div>
     <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 16px;">Сигнал — минимальная единица наблюдения: одна мысль, один факт, одна реакция. Сигнал создаётся с первого упоминания. <strong style="color: var(--text);">Один комментарий может содержать несколько сигналов.</strong></p>
-    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 16px;">Для формирования сигнала нужен объект. При извлечении система учитывает весь доступный контекст: <strong style="color: var(--text);">название компании, структуру опроса и вопрос</strong> — это помогает правильно распознать короткие или неоднозначные ответы. Объект ищется в два шага:</p>
-    <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; padding-left: 2px;">
-      <div style="display: flex; align-items: baseline; gap: 10px;">
-        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); min-width: 16px;">1</span>
-        <span style="font-size: 14px; color: var(--text); line-height: 1.6;">Ищем объект в тексте комментария</span>
-      </div>
-      <div style="display: flex; align-items: baseline; gap: 10px;">
-        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); min-width: 16px;">2</span>
-        <span style="font-size: 14px; color: var(--text); line-height: 1.6;">Если объекта нет — смотрим на вопрос, на который отвечал пользователь, и берём объект из него</span>
-      </div>
-      <div style="display: flex; align-items: baseline; gap: 10px;">
-        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); min-width: 16px;">—</span>
-        <span style="font-size: 14px; color: var(--text-soft); line-height: 1.6;">Если объект не определён ни там ни там — сигнал не создаётся</span>
-      </div>
-    </div>
     <div class="reviews-grid">
 
       <div class="review-row">
@@ -461,7 +478,8 @@
       <span class="section-num">02</span>
       <span class="section-title">Анатомия одного сигнала</span>
     </div>
-    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 24px;">Сигнал формулируется как <strong style="color: var(--text);">глагол + объект</strong> — по аналогии с заголовком задачи в Jira. Боль и действие живут в сигнале, не в теме.</p>
+    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 12px;">Сигнал формулируется как <strong style="color: var(--text);">глагол + объект</strong> — по аналогии с заголовком задачи в Jira. Боль и действие живут в сигнале, не в теме.</p>
+    <p style="font-size: 14px; color: var(--text-soft); line-height: 1.65; margin-bottom: 24px;">Объект сначала ищется в тексте комментария. Если не найден — смотрим на вопрос, на который отвечал пользователь, и другие ответы в опросе: это помогает распознать короткие или неоднозначные ответы. Если объект так и не определился — сигнал не создаётся, комментарий попадает в <strong style="color: var(--text);">Неразмеченное</strong>.</p>
     <div style="display: flex; gap: 8px; margin-bottom: 24px;">
       <span class="attr-tag" style="color: var(--green); border-color: var(--green-bg);">✓ не работают фильтры</span>
       <span class="attr-tag" style="color: var(--text-muted);">✗ проблемы с фильтрами</span>
@@ -782,15 +800,13 @@
           </div>
 
           <!-- Assistant message -->
-          <div style="display: flex; gap: 10px; align-items: flex-start;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: var(--text-muted);">AI</div>
-
+          <div style="display: flex;">
             <!-- Single message block -->
-            <div style="flex: 1; border: 1px solid var(--border); border-radius: 2px 10px 10px 10px; overflow: hidden;">
+            <div style="flex: 1; border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
 
               <!-- Заголовок -->
               <div style="padding: 14px 16px;">
-                <div style="font-size: 14px; font-weight: 600; color: var(--text);">Критики · Нейтралы · Промоутеры</div>
+                <div style="font-size: 14px; font-weight: 600; color: var(--text);">Сравнение по NPS-группам</div>
               </div>
 
               <!-- Ключевой инсайт -->
@@ -799,28 +815,40 @@
               </div>
 
               <!-- Группы -->
-              <div style="padding: 0 16px 16px 16px;">
+              <div style="padding: 0 16px 16px 16px; display: flex; flex-direction: column; gap: 8px;">
+
                 <!-- Критики -->
-                <div style="margin-bottom: 20px;">
-                  <div style="margin-bottom: 2px;"><span style="font-size: 12px; font-weight: 600; color: var(--text);">Критики</span></div>
-                  <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 2px;">20 ответов · 20 комментариев</div>
-                  <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">UX/CX Researcher 67% · Product Manager 13% · Other 13%</div>
-                  <div style="font-size: 13px; color: var(--text-soft); line-height: 1.7; margin-bottom: 10px;">В отличие от других групп, все 100% оставили комментарий. Боли конкретные и технические: <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">конструктор</span> (9 упоминаний) — отсутствие матричных вопросов и массового тегирования, <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">аналитика</span> (3 упоминания), <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">производительность</span> (3 упоминания). Только в этой группе звучит жалоба на непонимание нормальных цифр.</div>
-                  <div style="display: flex; flex-direction: column; gap: 5px;">
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"Нельзя выделить сразу несколько комментариев для тегирования"</div>
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"производительность, всё лагает постоянно"</div>
-                    <div style="font-size: 12px; color: var(--text-soft); font-style: italic; padding: 7px 10px; background: var(--surface); border-radius: 6px;">"Не хватает понимания — полученные цифры нормальные или надо что-то поменять?"</div>
+                <div class="segment-card">
+                  <div class="segment-card-body">
+                    <div class="segment-name">Критики</div>
+                    <div class="segment-meta">20 ответов · 20 комментариев</div>
+                    <div class="role-tags">
+                      <span class="role-tag role-tag-green">UX/CX Researcher 67%</span>
+                      <span class="role-tag role-tag-yellow">Product Manager 13%</span>
+                      <span class="role-tag role-tag-pink">Other 13%</span>
+                    </div>
+                    <div class="segment-summary">Все 100% оставили комментарий. Боли конкретные и технические: <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">конструктор</span> (9 упоминаний), <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">аналитика</span> (3), <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">производительность</span> (3).</div>
+                    <div class="segment-quotes">
+                      <div class="segment-quote">"Нельзя выделить сразу несколько комментариев для тегирования"</div>
+                      <div class="segment-quote">"производительность, всё лагает постоянно"</div>
+                    </div>
                   </div>
+                  <button class="segment-show-btn">Показать все комментарии ↓</button>
                 </div>
 
                 <!-- Нейтралы — fade -->
-                <div style="position: relative; overflow: hidden; padding-bottom: 4px;">
-                  <div style="opacity: 0.5;">
-                    <div style="margin-bottom: 2px;"><span style="font-size: 12px; font-weight: 600; color: var(--text);">Нейтралы</span></div>
-                    <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 2px;">33 ответа · 32 комментария</div>
-                    <div style="font-size: 11px; color: var(--text-muted);">UX/CX Researcher 62% · Product Manager 25% · Other 13%</div>
+                <div style="position: relative; overflow: hidden;">
+                  <div class="segment-card" style="opacity: 0.5; margin-bottom: 0;">
+                    <div class="segment-card-body">
+                      <div class="segment-name">Нейтралы</div>
+                      <div class="segment-meta">33 ответа · 32 комментария</div>
+                      <div class="role-tags">
+                        <span class="role-tag role-tag-green">UX/CX Researcher 62%</span>
+                        <span class="role-tag role-tag-yellow">Product Manager 25%</span>
+                      </div>
+                    </div>
                   </div>
-                  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 32px; background: linear-gradient(to bottom, transparent, var(--bg-card));"></div>
+                  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(to bottom, transparent, var(--bg-card));"></div>
                 </div>
 
               </div>
