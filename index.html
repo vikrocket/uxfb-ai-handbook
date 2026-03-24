@@ -214,7 +214,6 @@
   }
   .type-ne-rabotaet { color: var(--red); background: var(--red-bg); }
   .type-neudobno { color: var(--amber); background: var(--amber-bg); }
-  .type-neponyatno { color: var(--accent); background: var(--blue-bg); }
   .type-predlagayu { color: var(--green); background: var(--green-bg); }
   .type-nravitsya { color: var(--purple); background: var(--purple-bg); }
 
@@ -284,7 +283,7 @@
   .quote-bar { width: 2px; background: var(--border); border-radius: 2px; flex-shrink: 0; align-self: stretch; }
   .quote-text { font-size: 13px; color: var(--text); line-height: 1.6; }
 
-  .types-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .types-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .type-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; box-shadow: var(--shadow-card); }
   .type-card-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
   .type-card-desc { font-size: 13px; color: var(--text); line-height: 1.5; margin-bottom: 8px; }
@@ -397,9 +396,9 @@
         <div class="review-arrow">→</div>
         <div class="va-signals-col">
           <div class="va-signal">
-            <span class="signal-dot dot-blue"></span>
+            <span class="signal-dot dot-amber"></span>
             <span class="va-signal-text">Непонятно что такое длина/ширина/глубина</span>
-            <span class="signal-type type-neponyatno">непонятно</span>
+            <span class="signal-type type-neudobno">неудобно</span>
           </div>
           <div class="va-signal">
             <span class="signal-dot dot-green"></span>
@@ -515,13 +514,8 @@
       </div>
       <div class="type-card">
         <span class="type-card-badge type-neudobno">Неудобно</span>
-        <div class="type-card-desc">Работает, но мешает или раздражает</div>
+        <div class="type-card-desc">Работает, но мешает, раздражает или непонятно как пользоваться</div>
         <div class="type-card-routing">Дизайнер</div>
-      </div>
-      <div class="type-card">
-        <span class="type-card-badge type-neponyatno">Непонятно</span>
-        <div class="type-card-desc">Не понимает как пользоваться или что это</div>
-        <div class="type-card-routing">Контент, онбординг</div>
       </div>
       <div class="type-card">
         <span class="type-card-badge type-predlagayu">Предлагаю</span>
@@ -591,9 +585,9 @@
           <span class="cluster-signal-freq">×8</span>
         </div>
         <div class="cluster-signal">
-          <span class="signal-dot dot-blue"></span>
+          <span class="signal-dot dot-amber"></span>
           <span class="cluster-signal-text">Непонятно что такое длина/ширина/глубина</span>
-          <span class="signal-type type-neponyatno">непонятно</span>
+          <span class="signal-type type-neudobno">неудобно</span>
           <span class="cluster-signal-freq">×6</span>
         </div>
       </div>
