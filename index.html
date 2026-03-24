@@ -367,7 +367,22 @@
       <span class="section-num">01</span>
       <span class="section-title">Из комментария в сигнал</span>
     </div>
-    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 24px;">Сигнал — минимальная единица наблюдения: одна мысль, один факт, одна реакция. Сигнал создаётся с первого упоминания. <strong style="color: var(--text);">Один комментарий может содержать несколько сигналов.</strong> Для определения сигнала мы загружаем больше контекста, чем просто текст комментария: <strong style="color: var(--text);">структуру опроса, вопрос и сам ответ.</strong></p>
+    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 16px;">Сигнал — минимальная единица наблюдения: одна мысль, один факт, одна реакция. Сигнал создаётся с первого упоминания. <strong style="color: var(--text);">Один комментарий может содержать несколько сигналов.</strong></p>
+    <p style="font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 8px;">Для формирования сигнала нужен объект. Система ищет его в два шага:</p>
+    <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; padding-left: 2px;">
+      <div style="display: flex; align-items: baseline; gap: 10px;">
+        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); min-width: 16px;">1</span>
+        <span style="font-size: 14px; color: var(--text); line-height: 1.6;">Ищем объект в тексте комментария</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 10px;">
+        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); min-width: 16px;">2</span>
+        <span style="font-size: 14px; color: var(--text); line-height: 1.6;">Если объекта нет — смотрим на вопрос, на который отвечал пользователь, и берём объект из него</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 10px;">
+        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); min-width: 16px;">—</span>
+        <span style="font-size: 14px; color: var(--text-soft); line-height: 1.6;">Если объект не определён ни там ни там — сигнал не создаётся</span>
+      </div>
+    </div>
     <div class="reviews-grid">
 
       <div class="review-row">
@@ -591,6 +606,32 @@
           <span class="cluster-signal-freq">×6</span>
         </div>
       </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+
+      <div class="signal-card">
+        <div style="padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px;">
+          <span class="signal-dot" style="background: var(--text-muted); flex-shrink: 0;"></span>
+          <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em;">Неразмеченное</span>
+        </div>
+        <div style="padding: 12px 16px;">
+          <div style="font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 8px;">Из комментария не удалось извлечь ни одного сигнала.</div>
+          <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">Комментарий сохраняется, но не участвует в тематическом анализе. Фиксируется как измеримый результат, не как ошибка.</div>
+        </div>
+      </div>
+
+      <div class="signal-card">
+        <div style="padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px;">
+          <span class="signal-dot" style="background: var(--text-muted); flex-shrink: 0;"></span>
+          <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em;">Единичные упоминания</span>
+        </div>
+        <div style="padding: 12px 16px;">
+          <div style="font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 8px;">Сигналы есть, но их меньше 4 — тема не формируется.</div>
+          <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">Сигналы хранятся и видны отдельно. При накоплении до порога автоматически войдут в тему.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 
