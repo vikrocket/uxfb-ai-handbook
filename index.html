@@ -881,6 +881,39 @@
     <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em;">Алгоритм<br><span style="color: var(--accent);">и промпты</span></h1>
   </div>
 
+  <!-- Intro -->
+  <div class="section">
+    <p style="font-size: 15px; color: var(--text); line-height: 1.75; margin-bottom: 20px;">Система строится на трёх принципах: <strong>атомарные сигналы</strong> вместо сырых комментариев, <strong>LLM как основной движок</strong> понимания текста, и <strong>чистый semantic layer</strong> отдельно от фактических ответов. Благодаря этому один ответ пользователя может одновременно попасть в несколько тем — и каждая тема получает точное название, а не набор частых слов.</p>
+
+    <!-- Docs -->
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Документация</div>
+      <a href="https://docs.google.com/document/d/1rBik07rna8er_E5dTr5qNaocdh71TbbKdD3Msk24FEc/edit?tab=t.0" target="_blank" style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text); background: var(--bg-card);">
+        <span style="font-size: 16px;">📄</span>
+        <div>
+          <div style="font-size: 13px; font-weight: 500;">Алгоритм кластеризации</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Полная спека: эмбеддинги, assign, drift guard, split, merge</div>
+        </div>
+      </a>
+      <a href="https://docs.google.com/document/d/1UCPb2kTEKtZ94cut5ggXS-qC3148PB_exEFIbMkTvdw/edit?tab=t.0" target="_blank" style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text); background: var(--bg-card);">
+        <span style="font-size: 16px;">📄</span>
+        <div>
+          <div style="font-size: 13px; font-weight: 500;">Извлечение сигналов</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Спека signal_extractor_worker: промпт, JSON-контракт, постобработка</div>
+        </div>
+      </a>
+      <a href="https://openai.com/index/inside-our-in-house-data-agent/" target="_blank" style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text); background: var(--bg-card);">
+        <span style="font-size: 16px;">🔗</span>
+        <div>
+          <div style="font-size: 13px; font-weight: 500;">LLM-агент для аналитики данных — OpenAI</div>
+          <div style="font-size: 12px; color: var(--text-muted);">Референс: как LLM используется как движок обработки структурированных данных</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
   <!-- V1 vs V2 -->
   <div class="section">
     <div class="section-header">
