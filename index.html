@@ -897,8 +897,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Комментарий приходит целиком</div>
-          <div style="font-size: 12px; color: var(--text-soft);">"Зависает сайт, фильтры не работают, непонятен статус заказа"</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Ответ пользователя попадает в систему целиком</div>
+          <div style="font-size: 12px; color: var(--text-soft);">Например: "Зависает сайт, фильтры не работают, непонятен статус заказа" — всё это один кусок текста</div>
         </div>
       </div>
 
@@ -908,8 +908,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Фильтрация мусора — Natasha</div>
-          <div style="font-size: 12px; color: var(--text-soft);">Правила: &lt;4 букв, стоп-слова, эмоции без объекта → __garbage__<br>⚠️ Короткие но смысловые ответы ("продан") тоже отфильтровываются</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Natasha решает: разбирать ответ или выбросить</div>
+          <div style="font-size: 12px; color: var(--text-soft);">По жёстким правилам: слишком короткий, стоп-слова, эмоция без конкретики ("норм", "ок") → в мусор<br>⚠️ Короткий, но содержательный ответ ("продан") тоже летит в мусор — правила не понимают смысл</div>
         </div>
       </div>
 
@@ -919,8 +919,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Embedding всего текста — Gemini</div>
-          <div style="font-size: 12px; color: var(--text-soft);">Весь комментарий → 1 вектор 768d<br>⚠️ Три разных проблемы смешиваются в один вектор</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Gemini переводит весь ответ в числовой «отпечаток»</div>
+          <div style="font-size: 12px; color: var(--text-soft);">Один ответ → одна точка в пространстве смыслов<br>⚠️ Если в ответе три разных проблемы — они все смешиваются в эту одну точку</div>
         </div>
       </div>
 
@@ -930,8 +930,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Кластеризация по cosine distance</div>
-          <div style="font-size: 12px; color: var(--text-soft);">Один комментарий → один кластер<br>⚠️ "Сотрудник, тестирую" может попасть в кластер с реальным фидбеком</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Похожие по смыслу ответы собираются в темы</div>
+          <div style="font-size: 12px; color: var(--text-soft);">Один ответ → одна тема · группировка по близости «отпечатков»<br>⚠️ "Сотрудник, тестирую" может оказаться в теме с реальными жалобами — Natasha его не поймала</div>
         </div>
       </div>
 
@@ -940,8 +940,8 @@
           <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">5</div>
         </div>
         <div style="padding-bottom: 4px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Нейминг — Natasha или LLM</div>
-          <div style="font-size: 12px; color: var(--text-soft);">Топ-3 леммы из текстов кластера или Gemini Flash<br>⚠️ Большая часть кластеров получает имя через эвристику, не LLM</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Теме дают название</div>
+          <div style="font-size: 12px; color: var(--text-soft);">Natasha берёт самые частые слова из ответов в теме — или это делает ИИ<br>⚠️ Большинство тем называются по словам, а не по смыслу — отсюда странные названия</div>
         </div>
       </div>
 
@@ -965,8 +965,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Комментарий + контекст → signal_extractor_worker</div>
-          <div style="font-size: 12px; color: var(--text-soft);">LLM получает: текст + вопрос + кампания + структура опроса</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Ответ + контекст уходят в ИИ <span style="font-weight: 400; color: var(--text-muted);">(signal_extractor_worker)</span></div>
+          <div style="font-size: 12px; color: var(--text-soft);">ИИ видит не только текст ответа, но и: какой вопрос задавали, из какой кампании, что за опрос</div>
         </div>
       </div>
 
@@ -976,8 +976,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">LLM извлекает 0..N атомарных сигналов</div>
-          <div style="font-size: 12px; color: var(--text-soft);">"Зависает сайт, фильтры не работают, непонятен статус заказа"<br>→ Сайт зависает · Не работают фильтры · Непонятен статус заказа<br>Тест-комменты и мусор → 0 сигналов, логируется</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">ИИ разбивает ответ на отдельные проблемы</div>
+          <div style="font-size: 12px; color: var(--text-soft);">"Зависает сайт, фильтры не работают, непонятен статус заказа"<br>→ три отдельных сигнала: Сайт зависает · Не работают фильтры · Непонятен статус заказа<br>Тест-ответ или мусор → ноль сигналов, факт записывается в лог</div>
         </div>
       </div>
 
@@ -987,8 +987,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Постобработка — отбрасываем невалидные</div>
-          <div style="font-size: 12px; color: var(--text-soft);">Нет глагола · нет объекта · дубли · banned topic_hint · низкий confidence</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Автопроверка: выбрасываем неполные и повторы</div>
+          <div style="font-size: 12px; color: var(--text-soft);">Нет действия · нет объекта · дубликат · запрещённая область · низкая уверенность ИИ → в мусор</div>
         </div>
       </div>
 
@@ -998,8 +998,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Embedding каждого сигнала — signal_embedding_worker</div>
-          <div style="font-size: 12px; color: var(--text-soft);">Каждый signal_text → отдельный вектор 768d<br>Независимый semantic layer от fact_text_embedding</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Каждая проблема получает свой «отпечаток» <span style="font-weight: 400; color: var(--text-muted);">(signal_embedding_worker)</span></div>
+          <div style="font-size: 12px; color: var(--text-soft);">Один сигнал → одна точка · отдельно от «отпечатка» всего ответа</div>
         </div>
       </div>
 
@@ -1009,8 +1009,8 @@
           <div style="width: 2px; flex: 1; background: var(--border); margin-top: 4px;"></div>
         </div>
         <div style="padding-bottom: 16px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Кластеризация по signal_id — signal_cluster_worker</div>
-          <div style="font-size: 12px; color: var(--text-soft);">Та же логика: cosine distance, drift guard, Ward split, merge<br>Порог формирования темы: ≥ 4 сигналов · иначе → Единичные упоминания</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Похожие проблемы собираются в темы <span style="font-weight: 400; color: var(--text-muted);">(signal_cluster_worker)</span></div>
+          <div style="font-size: 12px; color: var(--text-soft);">Та же логика группировки по смыслу · одна проблема может попасть в несколько тем<br>Тема формируется от 4 сигналов · меньше → Единичные упоминания</div>
         </div>
       </div>
 
@@ -1019,8 +1019,8 @@
           <div style="width: 28px; height: 28px; border-radius: 50%; background: #2a7a4b; color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">6</div>
         </div>
         <div style="padding-bottom: 4px; flex: 1;">
-          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Нейминг кластера — topic_naming_worker</div>
-          <div style="font-size: 12px; color: var(--text-soft);">LLM получает сигналы кластера + topic_hint → название, описание, ключевые сигналы</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px;">ИИ называет тему и пишет описание <span style="font-weight: 400; color: var(--text-muted);">(topic_naming_worker)</span></div>
+          <div style="font-size: 12px; color: var(--text-soft);">ИИ получает все сигналы темы + подсказку по продуктовой области → даёт название, описание и список ключевых проблем</div>
         </div>
       </div>
 
@@ -1031,18 +1031,18 @@
       <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;">Ключевые отличия</div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div style="font-size: 12px; color: var(--text-soft);"><span style="color: var(--text-muted);">Было</span><br>Embed(комментарий) → 1 кластер</div>
-          <div style="font-size: 12px; color: var(--text);"><span style="color: #2a7a4b;">Стало</span><br>Embed(сигнал) → N кластеров</div>
+          <div style="font-size: 12px; color: var(--text-soft);"><span style="color: var(--text-muted);">Было</span><br>1 ответ → 1 тема</div>
+          <div style="font-size: 12px; color: var(--text);"><span style="color: #2a7a4b;">Стало</span><br>1 ответ → несколько проблем → несколько тем</div>
         </div>
         <div style="height: 1px; background: var(--border-soft);"></div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div style="font-size: 12px; color: var(--text-soft);"><span style="color: var(--text-muted);">Было</span><br>Мусор фильтрует Natasha по правилам</div>
-          <div style="font-size: 12px; color: var(--text);"><span style="color: #2a7a4b;">Стало</span><br>Мусор → 0 сигналов от LLM</div>
+          <div style="font-size: 12px; color: var(--text-soft);"><span style="color: var(--text-muted);">Было</span><br>Мусор отсеивает Natasha по правилам — и ошибается</div>
+          <div style="font-size: 12px; color: var(--text);"><span style="color: #2a7a4b;">Стало</span><br>Мусор → ИИ просто не находит сигналов</div>
         </div>
         <div style="height: 1px; background: var(--border-soft);"></div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div style="font-size: 12px; color: var(--text-soft);"><span style="color: var(--text-muted);">Было</span><br>Нейминг — Natasha топ-3 леммы</div>
-          <div style="font-size: 12px; color: var(--text);"><span style="color: #2a7a4b;">Стало</span><br>Нейминг — topic_naming_worker (LLM) с чистым input</div>
+          <div style="font-size: 12px; color: var(--text-soft);"><span style="color: var(--text-muted);">Было</span><br>Тема называется по частым словам</div>
+          <div style="font-size: 12px; color: var(--text);"><span style="color: #2a7a4b;">Стало</span><br>Тему называет ИИ по смыслу сигналов</div>
         </div>
       </div>
     </div>
