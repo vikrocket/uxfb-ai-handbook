@@ -825,7 +825,7 @@
   </div>
 
   <div style="margin-bottom: 32px;">
-    <p style="font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 16px;">Из текстовых ответов получается много сигналов — и большинство с одним-двумя упоминаниями. Раздел кластеризует сигналы в <strong>темы</strong> и отделяет устойчивые паттерны от единичных. Это навигатор: вместо сотни сигналов разной частоты — структурированная картина того, что важно прямо сейчас.</p>
+    <p style="font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 16px;">Из текстовых ответов получается много сигналов — и часть из них с одним-двумя упоминаниями. Раздел объединяет сигналы в <strong>темы</strong> и отделяет устойчивые паттерны от единичных. Это навигатор: вместо сотни сигналов разной частоты — структурированная картина того, что важно прямо сейчас.</p>
     <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">Тема — это не просто группировка. Внутри неё видно сколько пользователей столкнулись с проблемой, какие типы сигналов преобладают и кто именно это говорит.</p>
   </div>
 
@@ -847,8 +847,8 @@
       </div>
       <div style="position: relative;">
         <div style="position: absolute; left: -32px; top: 2px; width: 23px; height: 23px; border-radius: 50%; background: var(--green); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">3</div>
-        <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Детализация</div>
-        <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Клик на конкретный сигнал внутри темы открывает все комментарии, из которых он был собран.</div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Готовый результат</div>
+        <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Структура и формулировки рассчитаны на скриншот сообщения в команду или слайд в отчёт — без дополнительной обработки.</div>
       </div>
     </div>
   </div>
@@ -863,6 +863,19 @@
     <div style="margin-top: 0; display: flex; gap: 20px; align-items: flex-start;" class="example-with-legend">
       <!-- Example -->
       <div style="flex: 1; min-width: 0;">
+      <div style="border: 1px solid var(--border-soft); border-radius: 10px; overflow: visible; max-width: 100%; background: var(--bg-card);">
+
+        <!-- Chat header -->
+        <div style="padding: 10px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; background: var(--surface); border-radius: 10px 10px 0 0;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0;">AI</div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.2;">AI Ассистент</div>
+            <div style="font-size: 11px; color: var(--green);">● онлайн</div>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div style="padding: 16px; background: var(--bg);">
         <div style="border: 1px solid var(--border); border-radius: 10px; overflow: visible; background: var(--bg-card); position: relative;">
 
           <!-- Theme header -->
@@ -929,10 +942,12 @@
           </div>
 
         </div>
+        </div><!-- end message -->
+      </div><!-- end chat window -->
       </div>
 
       <!-- Legend -->
-      <div class="legend-col" style="width: 220px; flex-shrink: 0; padding-top: 40px; display: flex; flex-direction: column; gap: 14px;">
+      <div class="legend-col" style="width: 220px; flex-shrink: 0; padding-top: 60px; display: flex; flex-direction: column; gap: 14px;">
         <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px;">Структура темы</div>
 
         <div style="display: flex; gap: 8px; align-items: flex-start;">
@@ -1061,7 +1076,7 @@
       <div style="border: 1px solid var(--border-soft); border-radius: 10px; overflow: visible; max-width: 100%; background: var(--bg-card);">
 
         <!-- Chat header -->
-        <div style="padding: 10px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; background: var(--bg-card); border-radius: 10px 10px 0 0;">
+        <div style="padding: 10px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; background: var(--surface); border-radius: 10px 10px 0 0;">
           <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0;">AI</div>
           <div>
             <div style="font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.2;">AI Ассистент</div>
