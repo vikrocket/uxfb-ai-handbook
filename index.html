@@ -373,7 +373,7 @@
   </div>
 
   <div class="nav-section">
-    <a class="nav-item active" data-section="methodology" onclick="showSection('methodology')">Принципы обработки</a>
+    <a class="nav-item active" data-section="principles" onclick="showSection('principles')">Принципы обработки</a>
     <div class="nav-divider"></div>
     <a class="nav-item" data-section="assistant" onclick="showSection('assistant')">AI Ассистент</a>
     <a class="nav-item nav-sub" data-section="compare" onclick="showSection('compare')">Сравнение сегментов</a>
@@ -386,7 +386,7 @@
 <div class="main">
 
 <!-- METHODOLOGY -->
-<div class="content-section active" id="methodology">
+<div class="content-section active" id="principles">
 <div class="page" style="margin: 0; width: 100%;">
 
   <div class="header">
@@ -668,8 +668,8 @@
   </div>
 
 
-</div><!-- end methodology page -->
-</div><!-- end methodology content-section -->
+</div><!-- end principles page -->
+</div><!-- end principles content-section -->
 
 <!-- ASSISTANT -->
 <div class="content-section" id="assistant">
@@ -1170,15 +1170,15 @@ function scrollToEl(id) {
 
 // Handle back/forward
 window.addEventListener('popstate', (e) => {
-  const id = e.state?.section || location.hash.replace('#', '') || 'methodology';
+  const id = e.state?.section || location.hash.replace('#', '') || 'principles';
   showSection(id, false);
 });
 
 // Load from URL hash on init
 window.addEventListener('DOMContentLoaded', () => {
   const hash = location.hash.replace('#', '');
-  const valid = ['methodology', 'assistant', 'compare', 'engineering'];
-  showSection(valid.includes(hash) ? hash : 'methodology', false);
+  const valid = ['principles', 'assistant', 'compare', 'engineering'];
+  showSection(valid.includes(hash) ? hash : 'principles', false);
 });
 </script>
 
