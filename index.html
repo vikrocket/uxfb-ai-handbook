@@ -719,37 +719,34 @@
 
   <!-- ЛОГИКА СЦЕНАРИЯ -->
     <div class="section" style="margin-bottom: 24px;">
-      <div class="attr-label" style="margin-bottom: 12px;">Как работает сценарий</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+      <div class="attr-label" style="margin-bottom: 16px;">Как работает сценарий</div>
 
-        <div class="signal-card">
-          <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
-            <div class="attr-label" style="margin-bottom: 0;">Выбираешь группы</div>
-          </div>
-          <div style="padding: 14px 16px;">
-            <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Любые две или три группы из доступных параметров — по оценке, роли, устройству или свойствам ответа.</div>
-          </div>
+      <div style="display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 32px;">
+        <!-- vertical line -->
+        <div style="position: absolute; left: 11px; top: 12px; bottom: 12px; width: 1px; background: var(--border);"></div>
+
+        <!-- Step 1 -->
+        <div style="position: relative; padding-bottom: 20px;">
+          <div style="position: absolute; left: -32px; top: 2px; width: 23px; height: 23px; border-radius: 50%; background: var(--green); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">1</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Выбор параметра</div>
+          <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Один параметр — оценка, устройство, роль или любое свойство из ответа. Ассистент сам разобьёт респондентов на группы.</div>
         </div>
 
-        <div class="signal-card">
-          <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
-            <div class="attr-label" style="margin-bottom: 0;">Ассистент находит разделитель</div>
-          </div>
-          <div style="padding: 14px 16px;">
-            <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Не описывает каждую группу отдельно, а ищет что по-настоящему отличает их друг от друга — с цифрами и цитатами.</div>
-          </div>
+        <!-- Step 2 -->
+        <div style="position: relative; padding-bottom: 20px;">
+          <div style="position: absolute; left: -32px; top: 2px; width: 23px; height: 23px; border-radius: 50%; background: var(--green); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">2</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Сравнение групп</div>
+          <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Коротко описывает характерные черты каждой группы и то, что отличает её от остальных — с цифрами и цитатами.</div>
         </div>
 
-        <div class="signal-card">
-          <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
-            <div class="attr-label" style="margin-bottom: 0;">Ответ готов к шерингу</div>
-          </div>
-          <div style="padding: 14px 16px;">
-            <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Структура и формулировки рассчитаны на скриншот в слак или слайд в презу — без дополнительной обработки.</div>
-          </div>
+        <!-- Step 3 -->
+        <div style="position: relative;">
+          <div style="position: absolute; left: -32px; top: 2px; width: 23px; height: 23px; border-radius: 50%; background: var(--green); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">3</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Готовый результат</div>
+          <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Структура и формулировки рассчитаны на скриншот сообщения в команду или слайд в отчёт — без дополнительной обработки.</div>
         </div>
-
       </div>
+
     </div>
 
     <!-- PARAMS -->
@@ -759,12 +756,13 @@
 
         <div class="signal-card">
           <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
-            <div class="attr-label" style="margin-bottom: 0;">Группы по оценкам NPS</div>
+            <div class="attr-label" style="margin-bottom: 0;">Группы по оценкам</div>
           </div>
           <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 4px;">
             <div style="font-size: 12px; color: var(--text-soft);">Критики · 0–6</div>
             <div style="font-size: 12px; color: var(--text-soft);">Нейтралы · 7–8</div>
             <div style="font-size: 12px; color: var(--text-soft);">Промоутеры · 9–10</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px; font-style: italic;">Любой вопрос со шкалой — NPS, CSAT, звёзды, смайлы, цифры</div>
           </div>
         </div>
 
