@@ -29,7 +29,7 @@
     --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.06);
     --text: #1c1c1a;
     --text-soft: #5e5e5c;
-    --text-muted: #9e9e9b;
+    --text-muted: #767673;
     --accent: #2D3CA6;
     --accent-bg: #eef0fb;
     --accent-soft: #5b68c4;
@@ -705,11 +705,9 @@
 
     <!-- ПРОБЛЕМАТИКА -->
     <div style="margin-bottom: 32px;">
-      <p style="font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 12px;">Смотреть на результаты опроса в целом — значит смотреть на среднее. Среднее скрывает: один сегмент может тянуть метрику вниз пока другой держит её на месте, и в общей картине это выглядит как "нормально". Если этого не замечать — решения принимаются без контекста и не попадают ни в одну группу.</p>
-      <p style="font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 12px;">Разные группы замечают разные вещи. Продакт-менеджер и UX-ресёрчер используют продукт по-разному — и жалуются на разное. Пользователь мобильного приложения сталкивается с другими барьерами чем десктопный. Смешивать их в один поток — терять сигнал.</p>
-      <p style="font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 16px;">Сравнение в разрезах — стандартная практика в продуктовых исследованиях. Его цель не описать каждую группу, а найти <strong style="color: var(--text);">разделитель</strong>: фактор, который объясняет разницу между группами. Именно там обычно лежит следующий шаг.</p>
+      <p style="font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 16px;">Общая картина скрывает различия: один сегмент тянет метрику вниз, другой держит — а в среднем «нормально». Сравнение в разрезах ищет <strong style="color: var(--text);">разделитель</strong> — фактор, который объясняет разницу между группами. Именно там обычно лежит следующий шаг.</p>
       <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-        <span style="font-size: 13px; color: var(--text-muted);">↗</span>
+        <span style="font-size: 11px; color: var(--text-muted);">Подробнее:</span>
         <a href="https://www.nngroup.com/articles/analytics-persona-segment/" target="_blank" style="font-size: 11px; color: var(--accent); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">NN/G — про когнитивные ограничения</a>
         <a href="https://www.reforge.com/blog/what-is-user-segmentation" target="_blank" style="font-size: 11px; color: var(--accent); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">Reforge — как команды решают</a>
         <a href="https://cobbai.com/blog/segmenting-customer-feedback" target="_blank" style="font-size: 11px; color: var(--accent); text-decoration: none; padding: 2px 8px; border: 1px solid var(--border); border-radius: 4px;">Cobbai — signal-based тренд</a>
@@ -749,40 +747,39 @@
 
     </div>
 
+    <!-- CALLOUT -->
+    <div style="border-left: 2px solid var(--green); padding: 2px 0 2px 16px; margin-bottom: 24px;">
+      <div style="font-size: 13px; color: var(--text); line-height: 1.6;"><strong>Все ответы, не выборка.</strong> Сравнение строится на полном массиве данных — каждый комментарий уже разобран и привязан к темам. Ассистент работает с полной картиной, а не с фрагментом, который поместился в контекстное окно.</div>
+    </div>
+
     <!-- PARAMS -->
     <div class="section" style="margin-bottom: 32px;">
       <div class="attr-label" style="margin-bottom: 12px;">Доступные параметры для сравнения</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; align-items: start;">
 
-        <div class="signal-card">
-          <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
-            <div class="attr-label" style="margin-bottom: 0;">Группы по оценкам</div>
-          </div>
-          <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 4px;">
+        <div style="padding: 14px 24px 16px 0; border-top: 2px solid var(--border);">
+          <div class="attr-label" style="margin-bottom: 8px;">Группы по оценкам</div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
             <div style="font-size: 12px; color: var(--text-soft);">Критики · 0–6</div>
             <div style="font-size: 12px; color: var(--text-soft);">Нейтралы · 7–8</div>
             <div style="font-size: 12px; color: var(--text-soft);">Промоутеры · 9–10</div>
-            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px; font-style: italic;">Любой вопрос со шкалой — NPS, CSAT, звёзды, смайлы, цифры</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px; font-style: italic;">Любой вопрос со шкалой — NPS, CSAT, звёзды, смайлы, цифры</div>
           </div>
         </div>
 
-        <div class="signal-card">
-          <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
-            <div class="attr-label" style="margin-bottom: 0;">Устройство</div>
-          </div>
-          <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 4px;">
+        <div style="padding: 14px 24px 16px 24px; border-top: 2px solid var(--border); border-left: 1px solid var(--border);">
+          <div class="attr-label" style="margin-bottom: 8px;">Устройство</div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
             <div style="font-size: 12px; color: var(--text-soft);">WEB · Desktop / Mobile / Tablet</div>
             <div style="font-size: 12px; color: var(--text-soft);">App · iOS / Android</div>
           </div>
         </div>
 
-        <div class="signal-card">
-          <div style="padding: 14px 16px; border-bottom: 1px solid var(--border);">
-            <div class="attr-label" style="margin-bottom: 0;">Параметры ответа</div>
-          </div>
-          <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 4px;">
+        <div style="padding: 14px 0 16px 24px; border-top: 2px solid var(--border); border-left: 1px solid var(--border);">
+          <div class="attr-label" style="margin-bottom: 8px;">Параметры ответа</div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
             <div style="font-size: 12px; color: var(--text-soft);">Любые properties из ответа, которые передаёт клиент</div>
-            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px; font-style: italic;">Исключаем: email, id, phone, технические хеши, параметры с >20 уникальных значений</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px; font-style: italic;">Исключаем: email, id, phone, технические хеши, параметры с >20 уникальных значений</div>
           </div>
         </div>
 
