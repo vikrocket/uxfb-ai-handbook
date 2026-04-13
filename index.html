@@ -794,9 +794,11 @@
       <span class="section-num">01</span>
       <span class="section-title">Пример ответа</span>
     </div>
-    <!-- CHAT PROTOTYPE -->
-    <div style="margin-top: 0;">
-      <div style="border: 1px solid var(--border-soft); border-radius: 10px; overflow: hidden; max-width: 100%; background: var(--bg-card);">
+    <!-- CHAT PROTOTYPE + LEGEND -->
+    <div style="margin-top: 0; display: flex; gap: 20px; align-items: flex-start;">
+      <!-- Example -->
+      <div style="flex: 1; min-width: 0;">
+      <div style="border: 1px solid var(--border-soft); border-radius: 10px; overflow: visible; max-width: 100%; background: var(--bg-card);">
 
         <!-- Messages -->
         <div style="padding: 20px 16px; display: flex; flex-direction: column; gap: 16px; background: var(--bg);">
@@ -811,15 +813,17 @@
           <!-- Assistant message -->
           <div style="display: flex;">
             <!-- Single message block -->
-            <div style="flex: 1; border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
+            <div style="flex: 1; border: 1px solid var(--border); border-radius: 10px; overflow: visible; position: relative;">
 
               <!-- Заголовок -->
-              <div style="padding: 14px 16px;">
+              <div style="padding: 14px 16px; position: relative; border-radius: 10px 10px 0 0; background: var(--bg-card);">
+                <span style="position: absolute; left: -12px; top: 14px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">a</span>
                 <div style="font-size: 14px; font-weight: 600; color: var(--text);">Сравнение по NPS-группам</div>
               </div>
 
               <!-- Ключевой инсайт -->
-              <div style="padding: 0 16px 14px 16px;">
+              <div style="padding: 0 16px 14px 16px; position: relative;">
+                <span style="position: absolute; left: -12px; top: 0; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">b</span>
                 <div style="font-size: 13px; color: var(--text); line-height: 1.6;">Конструктор — единственная тема, которая звучит во всех трёх группах, но с разной интенсивностью. Критики хотят матричных вопросов и массового тегирования. Нейтралы — прототипы и сложную логику. Промоутеры тоже упоминают, но вскользь.</div>
               </div>
 
@@ -827,22 +831,25 @@
               <div style="padding: 0 16px 16px 16px; display: flex; flex-direction: column; gap: 8px;">
 
                 <!-- Критики -->
-                <div class="segment-card">
+                <div class="segment-card" style="position: relative; overflow: visible;">
+                  <span style="position: absolute; left: -12px; top: 8px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">c</span>
                   <div class="segment-card-body">
                     <div class="segment-name">Критики</div>
                     <div class="segment-meta">20 ответов · 20 комментариев</div>
-                    <div class="role-tags">
+                    <div class="role-tags" style="position: relative;">
+                      <span style="position: absolute; left: -28px; top: 2px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">d</span>
                       <span class="role-tag role-tag-green">UX/CX Researcher 67%</span>
                       <span class="role-tag role-tag-yellow">Product Manager 13%</span>
                       <span class="role-tag role-tag-pink">Other 13%</span>
                     </div>
-                    <div class="segment-summary">Все 100% оставили комментарий. Боли конкретные и технические: <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">конструктор</span> (9 упоминаний), <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">аналитика</span> (3), <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">производительность</span> (3).</div>
-                    <div class="segment-quotes">
-                      <div class="segment-quote">"Нельзя выделить сразу несколько комментариев для тегирования"</div>
-                      <div class="segment-quote">"производительность, всё лагает постоянно"</div>
+                    <div class="segment-summary" style="position: relative;">
+                      <span style="position: absolute; left: -28px; top: 2px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">e</span>
+                      Все 100% оставили комментарий. Боли конкретные и технические: <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">конструктор</span> (9 упоминаний), <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">аналитика</span> (3), <span style="color: var(--accent); text-decoration: underline; text-decoration-style: dotted; cursor: pointer;">производительность</span> (3).</div>
                     </div>
+                  <div style="position: relative;">
+                    <span style="position: absolute; left: -28px; top: 10px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">f</span>
+                    <button class="segment-show-btn">Показать все комментарии ↓</button>
                   </div>
-                  <button class="segment-show-btn">Показать все комментарии ↓</button>
                 </div>
 
                 <!-- Нейтралы — fade -->
@@ -869,6 +876,43 @@
 
 
       </div>
+      </div><!-- end example -->
+
+      <!-- Legend -->
+      <div style="width: 220px; flex-shrink: 0; padding-top: 80px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px;">Структура ответа</div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">a</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Заголовок</strong> — «Сравнение по [параметр]»</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">b</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Ключевой инсайт</strong> — что объединяет или разделяет группы, 2–3 предложения</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">c</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Карточка группы</strong> — название, кол-во ответов, комментариев, описание, цитаты</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">d</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Состав группы</strong> — кто попал в сегмент, распределение по доп. параметрам</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">e</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Описание</strong> — характерные черты и отличия от остальных. Темы оформлены как ссылки (клик = запрос на детализацию), всегда с кол-вом упоминаний</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">f</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Комментарии</strong> — кнопка раскрывает все комментарии группы</div>
+        </div>
+      </div>
+
     </div>
 
   </div>
