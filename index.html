@@ -376,6 +376,7 @@
     <a class="nav-item active" data-section="principles" onclick="showSection('principles')">Принципы обработки</a>
     <div class="nav-divider"></div>
     <a class="nav-item" data-section="assistant" onclick="showSection('assistant')">AI Ассистент</a>
+    <a class="nav-item nav-sub" data-section="whats-said" onclick="showSection('whats-said')">О чём говорят</a>
     <a class="nav-item nav-sub" data-section="compare" onclick="showSection('compare')">Сравнение сегментов</a>
     <div class="nav-divider"></div>
     <a class="nav-item" data-section="engineering" onclick="showSection('engineering')">Технические детали</a>
@@ -676,23 +677,286 @@
 <div class="page" style="margin: 0; width: 100%;">
 
   <div class="header">
-    <div class="header-eyebrow">AI Ассистент · Сценарии</div>
-    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em;">Что умеет<br><span style="color: var(--accent);">ассистент</span></h1>
+    <div class="header-eyebrow">AI Ассистент</div>
+    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em;">Обзор<br><span style="color: var(--accent);">результатов</span></h1>
   </div>
 
   <div class="section">
+    <p style="font-size: 15px; color: var(--text-soft); line-height: 1.7; margin-bottom: 0;">Стартовая точка работы с фидбеком. Ассистент собирает всё в одном экране: ключевые сигналы периода, темы которые обсуждают пользователи, и быстрый доступ к сравнению сегментов.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="section">
     <div class="section-header">
-      <span class="section-num">01</span>
-      <span class="section-title">Сравнение сегментов</span>
+      <span class="section-title">Пример экрана</span>
     </div>
 
+    <div style="display: flex; gap: 20px; align-items: flex-start; margin-top: 0;">
+      <!-- Overview mockup -->
+      <div style="flex: 1; min-width: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg-card); position: relative;">
 
+        <!-- Title bar -->
+        <div style="padding: 16px 20px 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px;">
+          <span style="color: var(--accent); font-size: 16px;">✦</span>
+          <span style="font-size: 15px; font-weight: 600; color: var(--text);">Обзор результатов</span>
+        </div>
 
+        <!-- Stats row -->
+        <div style="padding: 14px 20px; border-bottom: 1px solid var(--border); position: relative;">
+          <span style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">a</span>
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Анализ за период: 17 января 2025 — 14 апреля 2026</div>
+          <div style="display: flex; gap: 20px; font-size: 13px; color: var(--text-soft);">
+            <span>Ответов <strong style="color: var(--text);">8095</strong></span>
+            <span>Комментариев <strong style="color: var(--text);">1860</strong></span>
+            <span>Оценка —</span>
+          </div>
+        </div>
+
+        <!-- Key signals -->
+        <div style="padding: 14px 20px 10px; border-bottom: 1px solid var(--border); position: relative;">
+          <span style="position: absolute; left: -10px; top: 18px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">b</span>
+          <div style="font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 10px;">Ключевые сигналы</div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 13px; font-weight: 500; color: var(--text);">Причина удаления</div>
+                <div style="font-size: 12px; color: var(--text-muted);">Новое: 67 упоминаний за период</div>
+              </div>
+              <span style="color: var(--text-muted); font-size: 14px;">›</span>
+            </div>
+            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 13px; font-weight: 500; color: var(--text);">Уточнение модели</div>
+                <div style="font-size: 12px; color: var(--text-muted);">Новое: 47 упоминаний за период</div>
+              </div>
+              <span style="color: var(--text-muted); font-size: 14px;">›</span>
+            </div>
+            <div style="border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; opacity: 0.5;">
+              <div>
+                <div style="font-size: 13px; font-weight: 500; color: var(--text);">Данные авто</div>
+                <div style="font-size: 12px; color: var(--text-muted);">Новое: 8 упоминаний за период</div>
+              </div>
+              <span style="color: var(--text-muted); font-size: 14px;">›</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- What users say -->
+        <div style="padding: 14px 20px 12px; border-bottom: 1px solid var(--border); position: relative;">
+          <span style="position: absolute; left: -10px; top: 18px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">c</span>
+          <div style="font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 10px;">О чем говорят пользователи</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="font-size: 12px; color: var(--text-soft); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;">Причина удаления <span style="color: var(--text-muted);">67</span></span>
+            <span style="font-size: 12px; color: var(--text-soft); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;">Уточнение модели <span style="color: var(--text-muted);">47</span></span>
+            <span style="font-size: 12px; color: var(--text-soft); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;">Данные авто <span style="color: var(--text-muted);">8</span></span>
+            <span style="font-size: 12px; color: var(--text-soft); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;">Каталог автомобилей <span style="color: var(--text-muted);">4</span></span>
+            <span style="font-size: 12px; color: var(--text-muted); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; font-style: italic;">Единичные упоминания 5</span>
+            <span style="font-size: 12px; color: var(--text-muted); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; font-style: italic;">Неразмеченные 665</span>
+          </div>
+        </div>
+
+        <!-- Compare segments -->
+        <div style="padding: 14px 20px 12px; border-bottom: 1px solid var(--border); position: relative;">
+          <span style="position: absolute; left: -10px; top: 18px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">d</span>
+          <div style="font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 10px;">Сравнить сегменты</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="font-size: 12px; color: var(--text-soft); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;">categoryid</span>
+            <span style="font-size: 12px; color: var(--text-soft); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;">cid</span>
+            <span style="font-size: 12px; color: var(--text-soft); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;">mcid</span>
+            <span style="font-size: 12px; color: var(--text-soft); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;">Почему решили удалить авто из Гаража?</span>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div style="padding: 14px 20px; position: relative;">
+          <span style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">e</span>
+          <div style="border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; background: var(--bg);">
+            <span style="font-size: 13px; color: var(--text-muted);">Что стоит улучшить в первую очередь?</span>
+            <div style="width: 28px; height: 28px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 13px; flex-shrink: 0;">→</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Legend -->
+      <div class="legend-col" style="width: 220px; flex-shrink: 0; padding-top: 60px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px;">Структура экрана</div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">a</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Период и статистика</strong> — диапазон дат, число ответов и комментариев</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">b</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Ключевые сигналы</strong> — темы с новыми упоминаниями за период, отсортированы по приросту</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">c</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">О чём говорят</strong> — все темы периода в виде чипов с числом упоминаний. Клик открывает детальный вид темы</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">d</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Сравнить сегменты</strong> — доступные параметры для сравнения. Клик запускает анализ</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">e</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Поле ввода</strong> — произвольный вопрос к данным</div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
-
 </div><!-- end assistant content-section -->
+
+
+<!-- WHATS SAID -->
+<div class="content-section" id="whats-said">
+<div class="page" style="margin: 0; width: 100%;">
+
+  <div class="header">
+    <div class="header-eyebrow">AI Ассистент · О чём говорят пользователи</div>
+    <h1 style="font-size: 36px; font-weight: 700; letter-spacing: -0.03em;">О чём говорят<br><span style="color: var(--accent);">пользователи</span></h1>
+  </div>
+
+  <div style="margin-bottom: 32px;">
+    <p style="font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 16px;">Из текстовых ответов получается много сигналов — и большинство с одним-двумя упоминаниями. Раздел кластеризует сигналы в <strong>темы</strong> и отделяет устойчивые паттерны от единичных. Это навигатор: вместо сотни сигналов разной частоты — структурированная картина того, что важно прямо сейчас.</p>
+    <p style="font-size: 14px; color: var(--text-soft); line-height: 1.7;">Тема — это не просто группировка. Внутри неё видно сколько пользователей столкнулись с проблемой, какие типы сигналов преобладают и кто именно это говорит.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="section" style="margin-bottom: 32px;">
+    <div class="attr-label" style="margin-bottom: 12px;">Как работает</div>
+    <div style="display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 32px;">
+      <div style="position: absolute; left: 11px; top: 12px; bottom: 12px; width: 1px; background: var(--border);"></div>
+      <div style="position: relative; padding-bottom: 20px;">
+        <div style="position: absolute; left: -32px; top: 2px; width: 23px; height: 23px; border-radius: 50%; background: var(--green); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">1</div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Выбор темы</div>
+        <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Нажмите на тему в блоке «О чём говорят пользователи» — откроется детальный вид с полным списком сигналов.</div>
+      </div>
+      <div style="position: relative; padding-bottom: 20px;">
+        <div style="position: absolute; left: -32px; top: 2px; width: 23px; height: 23px; border-radius: 50%; background: var(--green); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">2</div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Анализ темы</div>
+        <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Ассистент показывает все сигналы внутри темы, их типы и частоту, а также кто из сегментов упоминает тему чаще всего.</div>
+      </div>
+      <div style="position: relative;">
+        <div style="position: absolute; left: -32px; top: 2px; width: 23px; height: 23px; border-radius: 50%; background: var(--green); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">3</div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Детализация</div>
+        <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6;">Клик на конкретный сигнал внутри темы открывает все комментарии, из которых он был собран.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Пример темы</span>
+    </div>
+
+    <div style="margin-top: 0; display: flex; gap: 20px; align-items: flex-start;" class="example-with-legend">
+      <!-- Example -->
+      <div style="flex: 1; min-width: 0;">
+        <div style="border: 1px solid var(--border); border-radius: 10px; overflow: visible; background: var(--bg-card); position: relative;">
+
+          <!-- Theme header -->
+          <div style="padding: 16px 20px; border-bottom: 1px solid var(--border); position: relative;">
+            <span style="position: absolute; left: -10px; top: 20px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">a</span>
+            <div style="font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px;">Высокое качество обслуживания</div>
+            <div style="font-size: 12px; color: var(--text-muted);">572 упоминания &nbsp;·&nbsp; 33% из 1800 ответов с комментариями</div>
+          </div>
+
+          <!-- Description -->
+          <div style="padding: 14px 20px; border-bottom: 1px solid var(--border); position: relative;">
+            <span style="position: absolute; left: -10px; top: 18px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">b</span>
+            <p style="font-size: 13px; color: var(--text-soft); line-height: 1.65; margin: 0;">Пользователи высоко оценивают текущее состояние интерфейса, выделяя удобство навигации и качество визуального представления товаров, как ключевые факторы удовлетворённости.</p>
+          </div>
+
+          <!-- Signal 1 -->
+          <div style="padding: 14px 20px; border-bottom: 1px solid var(--border); position: relative;">
+            <span style="position: absolute; left: -10px; top: 18px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">c</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
+              <div style="font-size: 14px; font-weight: 500; color: var(--text);">Нестабильная работа приложения</div>
+              <div style="text-align: right; flex-shrink: 0;">
+                <span class="signal-type type-ne-rabotaet" style="display: block; margin-bottom: 4px;">Не работает</span>
+                <div style="font-size: 20px; font-weight: 700; color: var(--accent); line-height: 1;">36%</div>
+                <div style="font-size: 11px; color: var(--text-muted);">49 упоминаний</div>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text-soft); line-height: 1.6; margin: 0 0 10px;">Клиенты отмечают общую эргономику сайта и удобство взаимодействия с его элементами.</p>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <span class="attr-tag">Критики 25%</span>
+              <span class="attr-tag">Ресерчеры 25%</span>
+              <span class="attr-tag">Другие 50%</span>
+            </div>
+          </div>
+
+          <!-- Signal 2 (faded) -->
+          <div style="position: relative; overflow: hidden;">
+            <div style="padding: 14px 20px; opacity: 0.45;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
+                <div style="font-size: 14px; font-weight: 500; color: var(--text);">Интерфейс и навигация</div>
+                <div style="text-align: right; flex-shrink: 0;">
+                  <span class="signal-type type-ne-rabotaet" style="display: block; margin-bottom: 4px;">Не работает</span>
+                  <div style="font-size: 20px; font-weight: 700; color: var(--accent); line-height: 1;">36%</div>
+                  <div style="font-size: 11px; color: var(--text-muted);">49 упоминаний</div>
+                </div>
+              </div>
+              <p style="font-size: 12px; color: var(--text-soft); line-height: 1.6; margin: 0 0 10px;">Клиенты отмечают общую эргономику сайта.</p>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class="attr-tag">Критики 25%</span>
+                <span class="attr-tag">Ресерчеры 25%</span>
+                <span class="attr-tag">Другие 50%</span>
+              </div>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, transparent, var(--bg-card));"></div>
+          </div>
+
+          <!-- Footer -->
+          <div style="padding: 12px 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+            <span style="position: absolute; left: -10px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">d</span>
+            <span style="font-size: 12px; color: var(--text-muted);">16 Марта – 23 Мая</span>
+            <div style="display: flex; gap: 8px;">
+              <span style="font-size: 16px; color: var(--text-muted); cursor: pointer;">👍</span>
+              <span style="font-size: 16px; color: var(--text-muted); cursor: pointer;">👎</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend-col" style="width: 220px; flex-shrink: 0; padding-top: 40px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px;">Структура темы</div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">a</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Заголовок темы</strong> — название и охват: сколько упоминаний и какой % от всех ответов с комментариями</div>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">b</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Описание</strong> — краткое резюме того, что объединяет сигналы внутри темы</div>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">c</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Сигнал</strong> — конкретное наблюдение внутри темы: тип, доля упоминаний, сегменты</div>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">d</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Период</strong> — временной диапазон анализа</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div><!-- end whats-said content-section -->
 
 
 <!-- COMPARE -->
@@ -795,6 +1059,15 @@
       <!-- Example -->
       <div style="flex: 1; min-width: 0;">
       <div style="border: 1px solid var(--border-soft); border-radius: 10px; overflow: visible; max-width: 100%; background: var(--bg-card);">
+
+        <!-- Chat header -->
+        <div style="padding: 10px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; background: var(--bg-card); border-radius: 10px 10px 0 0;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0;">AI</div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.2;">AI Ассистент</div>
+            <div style="font-size: 11px; color: var(--green);">● онлайн</div>
+          </div>
+        </div>
 
         <!-- Messages -->
         <div style="padding: 20px 16px; display: flex; flex-direction: column; gap: 16px; background: var(--bg);">
@@ -1177,7 +1450,7 @@ window.addEventListener('popstate', (e) => {
 // Load from URL hash on init
 window.addEventListener('DOMContentLoaded', () => {
   const hash = location.hash.replace('#', '');
-  const valid = ['principles', 'assistant', 'compare', 'engineering'];
+  const valid = ['principles', 'assistant', 'whats-said', 'compare', 'engineering'];
   showSection(valid.includes(hash) ? hash : 'principles', false);
 });
 </script>
