@@ -1104,6 +1104,10 @@
               <div style="padding: 14px 16px; position: relative; border-radius: 10px 10px 0 0; background: var(--bg-card);">
                 <span style="position: absolute; left: -12px; top: 14px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">a</span>
                 <div style="font-size: 14px; font-weight: 600; color: var(--text);">Сравнение по NPS-группам</div>
+                <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; background: var(--bg-card);" title="Копировать">
+                  <span style="position: absolute; top: -8px; right: -8px; font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">g</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </span>
               </div>
 
               <!-- Ключевой инсайт -->
@@ -1157,12 +1161,12 @@
           </div>
 
           <!-- Footer -->
-          <div style="padding: 10px 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 12px; color: var(--text-muted);">Понравился ответ?</span>
+          <div style="padding: 10px 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: relative;">
+            <span style="position: relative; display: inline-flex; align-items: center;">
+              <span style="position: absolute; left: -14px; top: 50%; transform: translateY(-50%); font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; z-index: 2; letter-spacing: 0.02em;">g</span>
+              <span style="font-size: 12px; color: var(--text-muted);">3 февраля – 28 марта</span>
+            </span>
             <div style="display: flex; gap: 6px;">
-              <span style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer;" title="Копировать">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              </span>
               <span style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
               </span>
@@ -1210,6 +1214,16 @@
         <div style="display: flex; gap: 8px; align-items: flex-start;">
           <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">f</span>
           <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Комментарии</strong> — кнопка раскрывает все комментарии группы</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">g</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Действия</strong> — скопировать результат или оценить качество ответа</div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: flex-start;">
+          <span style="font-size: 10px; font-weight: 600; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; flex-shrink: 0; letter-spacing: 0.02em;">h</span>
+          <div style="font-size: 12px; color: var(--text-soft); line-height: 1.5;"><strong style="color: var(--text);">Период</strong> — диапазон дат, за который собраны ответы</div>
         </div>
       </div>
 
